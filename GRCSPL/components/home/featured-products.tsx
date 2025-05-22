@@ -37,7 +37,7 @@ export default function FeaturedProducts() {
             <p className="mt-2 text-lg text-gray-600">High-quality products that your customers will love</p>
           </div>
           <Link href="/products" className="mt-4 md:mt-0">
-            <Button variant="outline" className="border-[#39b54b] text-[#39b54b]">
+            <Button variant="outline" className="border-[#39b54b] text-[#39b54b] hover:bg-[#39b54b] hover:text-white">
               View All Products
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

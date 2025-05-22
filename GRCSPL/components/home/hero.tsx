@@ -47,10 +47,10 @@ export default function Hero() {
               <Link href="/about">
                 <Button
                   variant="outline"
-                  className="border-[#39b54b] text-[#39b54b] hover:bg-[#f0f9f1] px-6 py-3 text-lg"
+                  className="border-[#39b54b] text-[#39b54b] group hover:bg-[#f0f9f1] px-6 py-3 text-lg"
                 >
                   {t("hero.learnMore")}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:-rotate-45 transition-all ease-in" />
                 </Button>
               </Link>
             </div>
