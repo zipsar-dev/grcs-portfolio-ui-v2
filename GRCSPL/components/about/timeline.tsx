@@ -1,4 +1,3 @@
-// Mock timeline data
 const timelineEvents = [
   {
     year: 2024,
@@ -18,7 +17,6 @@ export default function Timeline() {
       <h2 className="text-2xl font-bold mb-8">Our Journey</h2>
 
       <div className="relative">
-        {/* Timeline line */}
         <div className="absolute left-0 md:left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
 
         <div className="space-y-12">
@@ -29,10 +27,9 @@ export default function Timeline() {
             >
               <div className="md:w-1/2"></div>
 
-              {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-[#39b54b] transform -translate-x-1/2 z-10"></div>
 
-              <div className="pl-6 md:pl-0 md:w-1/2 md:px-8">
+              <div className="pl-6 md:w-1/2 md:px-8 scale-1">
                 <div className="bg-white p-4 rounded-lg shadow-md">
                   <div className="inline-block px-3 py-1 rounded bg-[#39b54b]/10 text-[#39b54b] font-bold mb-2">
                     {event.year}

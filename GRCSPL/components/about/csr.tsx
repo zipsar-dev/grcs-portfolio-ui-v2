@@ -1,6 +1,9 @@
-import { Leaf, Heart, BookOpen } from "lucide-react"
+"use client";
 
-// Mock CSR initiatives
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Leaf, Heart, BookOpen } from "lucide-react";
+
 const initiatives = [
   {
     icon: <Leaf className="h-8 w-8 text-[#39b54b]" />,
@@ -20,11 +23,14 @@ const initiatives = [
     description:
       "We provide scholarships to underprivileged students and support vocational training programs in rural areas of Tamil Nadu.",
   },
-]
+];
 
 export default function CSR() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="mt-16">
+    <section className="mt-16" ref={ref}>
       <h2 className="text-2xl font-bold mb-4">Corporate Social Responsibility</h2>
       <p className="text-gray-600 mb-8">
         We believe in giving back to the communities that have supported our growth. Our CSR initiatives focus on
@@ -33,13 +39,29 @@ export default function CSR() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {initiatives.map((initiative, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+          <motion.div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-all ease-in-out"
+            initial={{ 
+              opacity: 0, 
+              y: 50 
+            }}
+            animate={isInView ? {
+              opacity: 1,
+              y: 0
+            } : {}}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.2,
+              ease: "easeOut"
+            }}
+          >
             <div className="mb-4">{initiative.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{initiative.title}</h3>
             <p className="text-gray-600">{initiative.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -1,11 +1,10 @@
 "use client"
 
-import React,{ useState } from "react"
+import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence, Variants } from "framer-motion"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
-// TypeScript interfaces
+
 interface Testimonial {
   id: number
   name: string
@@ -15,7 +14,6 @@ interface Testimonial {
   image: string
 }
 
-// Extended testimonial data
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -24,7 +22,7 @@ const testimonials: Testimonial[] = [
     quote:
       "Joining this business opportunity was the best decision I made. The training and support have been exceptional, and my income has grown steadily over the past year.",
     rating: 5,
-    image: "/api/placeholder/100/100",
+    image: '/placeholder.svg?height=80&width=80',
   },
   {
     id: 2,
@@ -33,7 +31,7 @@ const testimonials: Testimonial[] = [
     quote:
       "I started as a part-time associate while working my regular job. Now I've built a team and run this business full-time. The products are excellent and customers keep coming back.",
     rating: 5,
-    image: "/api/placeholder/100/100",
+    image: "/placeholder.svg?height=80&width=80",
   },
   {
     id: 3,
@@ -42,7 +40,7 @@ const testimonials: Testimonial[] = [
     quote:
       "The business model is straightforward and the company provides all the tools needed to succeed. I've been able to create a sustainable income for my family.",
     rating: 4,
-    image: "/api/placeholder/100/100",
+    image: "/placeholder.svg?height=80&width=80",
   },
   {
     id: 4,
@@ -51,7 +49,7 @@ const testimonials: Testimonial[] = [
     quote:
       "What impressed me most is the genuine support from the team. They're always available to help and guide you through challenges. My business has flourished beyond expectations.",
     rating: 5,
-    image: "/api/placeholder/100/100",
+    image: "/placeholder.svg?height=80&width=80",
   },
   {
     id: 5,
@@ -60,7 +58,7 @@ const testimonials: Testimonial[] = [
     quote:
       "The flexible nature of this business allows me to work around my schedule. I've built a steady passive income while maintaining my work-life balance.",
     rating: 4,
-    image: "/api/placeholder/100/100",
+    image: "/placeholder.svg?height=80&width=80",
   },
   {
     id: 6,
@@ -69,16 +67,27 @@ const testimonials: Testimonial[] = [
     quote:
       "Starting with zero experience in business, I was nervous. But the comprehensive training program made everything clear. Now I'm mentoring others to succeed too.",
     rating: 5,
-    image: "/api/placeholder/100/100",
+    image: "/placeholder.svg?height=80&width=80",
   },
 ]
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [isPaused, setIsPaused] = useState<boolean>(false)
   
   const testimonialsPerPage: number = 3
   const totalPages: number = Math.ceil(testimonials.length / testimonialsPerPage)
+
+  useEffect(() => {
+    if (isPaused) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev: number) => (prev + 1) % totalPages)
+    }, 5000) 
+
+    return () => clearInterval(interval)
+  }, [totalPages, isPaused])
 
   const getCurrentTestimonials = (): Testimonial[] => {
     const start: number = currentIndex * testimonialsPerPage
@@ -100,13 +109,20 @@ export default function Testimonials() {
 
   const handleCardMouseEnter = (id: number): void => {
     setHoveredCard(id)
+    setIsPaused(true) 
   }
 
   const handleCardMouseLeave = (): void => {
     setHoveredCard(null)
+    setIsPaused(false) 
   }
 
-  // Animation variants with proper typing
+  const handleNavigationClick = (callback: () => void): void => {
+    setIsPaused(true)
+    callback()
+    setTimeout(() => setIsPaused(false), 3000)
+  }
+
   const starVariants: Variants = {
     initial: { scale: 1, rotate: 0 },
     hover: { 
@@ -212,53 +228,29 @@ export default function Testimonials() {
           </AnimatePresence>
 
           <div className="flex justify-center mt-8">
-            <motion.div
+            <motion.button
+              className="mr-2 rounded-full p-2 border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={() => handleNavigationClick(prevSlide)}
+              disabled={currentIndex === 0}
+              aria-label="Previous testimonials"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button 
-                variant="outline" 
-                className="mr-2 rounded-full p-2"
-                onClick={prevSlide}
-                disabled={currentIndex === 0}
-                aria-label="Previous testimonials"
-              >
-                <ChevronLeft className="h-6 w-6" />
-                <span className="sr-only">Previous</span>
-              </Button>
-            </motion.div>
+              <ChevronLeft className="h-6 w-6" />
+              <span className="sr-only">Previous</span>
+            </motion.button>
             
-            <motion.div
+            <motion.button
+              className="rounded-full p-2 border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={() => handleNavigationClick(nextSlide)}
+              disabled={currentIndex === totalPages - 1}
+              aria-label="Next testimonials"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button 
-                variant="outline" 
-                className="rounded-full p-2"
-                onClick={nextSlide}
-                disabled={currentIndex === totalPages - 1}
-                aria-label="Next testimonials"
-              >
-                <ChevronRight className="h-6 w-6" />
-                <span className="sr-only">Next</span>
-              </Button>
-            </motion.div>
-          </div>
-
-          {/* Pagination dots */}
-          <div className="flex justify-center mt-4 space-x-2">
-            {Array.from({ length: totalPages }, (_, index: number) => (
-              <motion.button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                  index === currentIndex ? 'bg-green-500' : 'bg-gray-300'
-                }`}
-                onClick={() => handlePageClick(index)}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label={`Go to page ${index + 1}`}
-              />
-            ))}
+              <ChevronRight className="h-6 w-6" />
+              <span className="sr-only">Next</span>
+            </motion.button>
           </div>
         </div>
       </div>
