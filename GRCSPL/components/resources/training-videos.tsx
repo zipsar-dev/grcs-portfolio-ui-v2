@@ -49,7 +49,7 @@ export default function TrainingVideos() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {trainingVideos.map((video) => (
-          <div key={video.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div key={video.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-all ease-in">
             <div className="relative">
               <img src={video.thumbnail || "/placeholder.svg"} alt={video.title} className="w-full h-48 object-cover" />
               <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
