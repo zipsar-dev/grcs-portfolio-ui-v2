@@ -14,7 +14,7 @@ export default function EventsPage() {
       <PageHeader title="Events Calendar" description="Stay updated with our events across Tamil Nadu" />
 
       <div className="mt-8">
-        <EventFilter />
+        {/* <EventFilter /> */}
         <div className="mt-6">
           <EventCalendar />
         </div>

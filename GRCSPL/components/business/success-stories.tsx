@@ -39,7 +39,7 @@ export default function SuccessStories() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {successStories.map((story) => (
-          <div key={story.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition-all ease-in">
+          <div key={story.id} className="bg-white rounded-lg overflow-hidden shadow-md">
             <div className="relative">
               <div className="aspect-[3/4] overflow-hidden">
                 <img src={story.image || "/placeholder.svg"} alt={story.name} className="w-full h-full object-cover" />

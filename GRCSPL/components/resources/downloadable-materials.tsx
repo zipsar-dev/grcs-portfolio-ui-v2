@@ -65,7 +65,7 @@ export default function DownloadableMaterials() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {materials.map((material) => (
-          <div key={material.id} className="bg-white rounded-lg shadow-md p-4 flex hover:scale-105 transition-all ease-in">
+          <div key={material.id} className="bg-white rounded-lg shadow-md p-4 flex">
             <div className="mr-4 flex-shrink-0">{material.icon}</div>
             <div className="flex-grow">
               <h3 className="font-bold mb-1">{material.title}</h3>

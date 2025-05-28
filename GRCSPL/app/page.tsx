@@ -7,12 +7,12 @@ import CallToAction from "@/components/home/call-to-action"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 pt-8">
+    <div className="flex flex-col gap-16 py-8">
       <Hero />
       <Benefits />
       <FeaturedProducts />
       <Testimonials />
-      <TrustBadges />
+      {/* <TrustBadges /> */}
       <CallToAction />
     </div>
   )
