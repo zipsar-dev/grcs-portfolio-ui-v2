@@ -146,7 +146,7 @@ export default function Footer() {
                   href="/terms-of-service"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Terms of Service
+                  Terms and Conditions
                 </Link>
               </li>
               <li>
@@ -159,12 +159,20 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/shipping-policy"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Shipping Policy
+                </Link>
+              </li>
+              {/* <li>
+                <Link
                   href="/income-disclaimer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Income Disclaimer
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

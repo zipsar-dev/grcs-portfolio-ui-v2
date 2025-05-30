@@ -6,24 +6,24 @@ import { ArrowRight } from "lucide-react"
 const products = [
   {
     id: 1,
-    name: "Health Supplement",
-    description: "Premium health supplement for daily wellness.",
-    price: 1200,
-    image: "/placeholder.svg?height=300&width=300",
+    name: "GR Vechicle Care",
+    description: "Premium Vehicle care products for a spotless shine.",
+    price: 145,
+    image: "/ACthum.png",
   },
   {
     id: 2,
-    name: "Beauty Product",
+    name: "GR Beauty Product",
     description: "Advanced skincare solution for all skin types.",
-    price: 950,
-    image: "/placeholder.svg?height=300&width=300",
+    price: 60,
+    image: "/PCthum.png",
   },
   {
     id: 3,
-    name: "Home Care",
+    name: "GR Home Care",
     description: "Eco-friendly home cleaning solution.",
-    price: 450,
-    image: "/placeholder.svg?height=300&width=300",
+    price: 68,
+    image: "/HCthum.png",
   },
 ]
 
@@ -37,7 +37,7 @@ export default function FeaturedProducts() {
             <p className="mt-2 text-lg text-gray-600">High-quality products that your customers will love</p>
           </div>
           <Link href="/products" className="mt-4 md:mt-0">
-            <Button variant="outline" className="border-[#39b54b] text-[#39b54b] hover:bg-[#39b54b] hover:text-white">
+            <Button variant="outline" className="border-[#39b54b] text-[#39b54b]">
               View All Products
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -61,7 +61,7 @@ export default function FeaturedProducts() {
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-gray-900">₹{product.price}</span>
+                  <span className="text-xl font-bold text-gray-900">starting from ₹{product.price}</span>
                   <Link href={`/products/product-${product.id}`}>
                     <Button className="bg-[#39b54b] hover:bg-[#2da03e]">Learn More</Button>
                   </Link>

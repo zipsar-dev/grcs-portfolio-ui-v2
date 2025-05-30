@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { Search, Grid, List } from "lucide-react";
+import React, { useState,useEffect } from "react";
+import { Search, Grid, List, X, Star, ShoppingCart, Eye, Zap, Award, Users,TrendingUp,Gift,ChevronLeft,ChevronRight } from "lucide-react";
 
 interface ProductDetails {
   name: string;
@@ -13,7 +13,8 @@ interface ProductDetails {
   benefit: string;
   usageTips: string;
 }
-const products = [
+// Combine all product objects into a flat array
+const productsRaw = [
   {
     HN1001: {
       name: "Fabricare Liquid Detergent 500ml",
@@ -481,103 +482,213 @@ const products = [
       useTips:
         "Spray directly onto the affected area. Use a microfiber cloth to scrub gently and wipe away the residue for a clean look.",
     },
-  },
+  }
 ];
 
-export default function ProductGrid() {
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+// Flatten the first object (dictionary) and merge with the rest
+const products = [
+  ...Object.values(productsRaw[0]).map((p: any) => ({
+    ...p,
+    useTips: p.useTips ?? p.usageTips,
+    rating: p.rating ?? 4.5,
+    reviews: p.reviews ?? 0,
+    inStock: p.inStock ?? true,
+  })),
+  ...productsRaw.slice(1)
+];
+
+export default function ProductSection() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [viewMode, setViewMode] = useState("grid");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
-  // Extract actual product objects from nested structure
-  const allProducts = products.flatMap((item) =>
-    Object.values(item).map((product) => product)
+  const filteredProducts = products.filter(product =>
+    typeof product.name === "string" && product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    typeof product.category === "string" && product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    typeof product.code === "string" && product.code.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const filteredProducts = allProducts.filter(
-    (product) =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  interface Product {
+    name: string;
+    src: string;
+    category: string;
+    code: string;
+    mrp: number;
+    discountPrice: number;
+    businessValue: number;
+    description: string;
+    benefit: string;
+    useTips?: string;
+    usageTips?: string;
+    rating?: number;
+    reviews?: number;
+    inStock?: boolean;
+  }
+
+  const openProductModal = (product: Product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeProductModal = () => {
+    setShowModal(false);
+    setSelectedProduct(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  interface CalculateDiscount {
+    (mrp: number, discountPrice: number): number;
+  }
+
+  const calculateDiscount: CalculateDiscount = (mrp, discountPrice) => {
+    return Math.round(((mrp - discountPrice) / mrp) * 100);
+  };
 
   return (
-    <div className="p-4 md:p-6">
+    <div className="p-4 md:p-6 relative">
+     
       {/* Search Bar & View Toggle */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-        <div className="relative w-full sm:w-64">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+        <div className="relative w-full sm:w-80">
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#39b54b] focus:border-transparent"
+            className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#39b54b] focus:border-[#39b54b] transition-all duration-300 bg-white shadow-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
         </div>
 
-        <div className="flex items-center space-x-2">
-          <span className="text-sm text-gray-600">View:</span>
+        <div className="flex items-center space-x-4 bg-gray-50 rounded-2xl p-2">
+          <span className="text-sm text-gray-600 font-medium px-2">View:</span>
           <button
-            className={`p-1 rounded ${
-              viewMode === "grid" ? "bg-gray-100" : ""
+            className={`p-2.5 rounded-xl transition-all duration-300 ${
+              viewMode === "grid" 
+                ? "bg-[#39b54b] text-white shadow-lg transform scale-105" 
+                : "text-gray-600 hover:bg-white hover:shadow-md"
             }`}
             onClick={() => setViewMode("grid")}
             aria-label="Grid view"
           >
-            <Grid className="h-5 w-5 text-gray-700" />
+            <Grid className="h-5 w-5" />
           </button>
           <button
-            className={`p-1 rounded ${
-              viewMode === "list" ? "bg-gray-100" : ""
+            className={`p-2.5 rounded-xl transition-all duration-300 ${
+              viewMode === "list" 
+                ? "bg-[#39b54b] text-white shadow-lg transform scale-105" 
+                : "text-gray-600 hover:bg-white hover:shadow-md"
             }`}
             onClick={() => setViewMode("list")}
             aria-label="List view"
           >
-            <List className="h-5 w-5 text-gray-700" />
+            <List className="h-5 w-5" />
           </button>
         </div>
       </div>
 
       {/* No Result Found */}
       {filteredProducts.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-gray-600">
-            No products found matching your search.
-          </p>
+        <div className="text-center py-16">
+          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Search className="w-12 h-12 text-gray-400" />
+          </div>
+          <p className="text-xl text-gray-600 mb-2">No products found</p>
+          <p className="text-gray-500">Try adjusting your search terms</p>
         </div>
       ) : viewMode === "grid" ? (
-        // Grid View
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+        // Enhanced Grid View
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.map((product, index) => (
             <div
               key={product.code}
-              className="bg-white rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg"
+              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+              style={{
+                animationDelay: `${index * 100}ms`,
+                animation: 'fadeInUp 0.6s ease-out forwards'
+              }}
             >
-              {/* Image Placeholder */}
-              <div className="aspect-square bg-gray-100 flex items-center justify-center">
+              {/* Product Image with Overlay */}
+              <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 <img
-                  src={product.src || "/placeholder.svg"}
+                  src={product.src}
                   alt={product.name}
-                  className="w-3/4 h-auto object-contain"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                
+                {/* Discount Badge */}
+                {typeof product.mrp === "number" && typeof product.discountPrice === "number" && calculateDiscount(product.mrp, product.discountPrice) > 0 && (
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {calculateDiscount(product.mrp, product.discountPrice)}% OFF
+                  </div>
+                )}
+
+                {/* Stock Status */}
+                <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${
+                  product.inStock 
+                    ? "bg-green-100 text-green-800" 
+                    : "bg-red-100 text-red-800"
+                }`}>
+                  {product.inStock ? "In Stock" : "Out of Stock"}
+                </div>
+
+                {/* Quick View Overlay */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <button
+                    onClick={() => openProductModal(product)}
+                    className="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold flex items-center space-x-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    <Eye className="w-4 h-4" />
+                    <span>Quick View</span>
+                  </button>
+                </div>
               </div>
+
               {/* Product Info */}
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-1 text-gray-800">
+              <div className="p-6">
+                <div className="mb-3">
+                  <span className="text-xs font-semibold text-[#39b54b] bg-[#39b54b]/10 px-2 py-1 rounded-full">
+                    {product.category}
+                  </span>
+                </div>
+                
+                <h3 className="text-lg font-bold mb-2 text-gray-800 line-clamp-2 group-hover:text-[#39b54b] transition-colors">
                   {product.name}
                 </h3>
+                
                 <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                   {product.description}
                 </p>
+
+                {/* Rating */}
+                <div className="flex items-center mb-4">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600 ml-2">({product.reviews})</span>
+                </div>
+
+                {/* Price and Action */}
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="block text-gray-500 line-through text-sm">
+                    <span className="block text-gray-400 line-through text-sm">
                       ₹{product.mrp.toFixed(2)}
                     </span>
-                    <span className="text-xl font-bold text-gray-900">
+                    <span className="text-2xl font-bold text-gray-900">
                       ₹{product.discountPrice.toFixed(2)}
                     </span>
                   </div>
-                  <button className="px-3 py-1.5 text-sm text-white bg-[#39b54b] hover:bg-[#2da03e] rounded-md transition-colors">
+                  <button 
+                    onClick={() => openProductModal(product)}
+                    className="px-4 py-2 text-sm text-white bg-gradient-to-r from-[#39b54b] to-[#2da03e] hover:from-[#2da03e] hover:to-[#259038] rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
                     View Details
                   </button>
                 </div>
@@ -586,41 +697,84 @@ export default function ProductGrid() {
           ))}
         </div>
       ) : (
-        // List View
-        <div className="space-y-4">
-          {filteredProducts.map((product) => (
+        // Enhanced List View
+        <div className="space-y-6">
+          {filteredProducts.map((product, index) => (
             <div
               key={product.code}
-              className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col sm:flex-row"
+              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col sm:flex-row border border-gray-100"
+              style={{
+                animationDelay: `${index * 100}ms`,
+                animation: 'fadeInUp 0.6s ease-out forwards'
+              }}
             >
               {/* Image */}
-              <div className="sm:w-1/3 aspect-square sm:aspect-auto bg-gray-100 flex items-center justify-center p-4">
+              <div className="sm:w-1/3 aspect-square sm:aspect-auto bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6 relative">
                 <img
-                  src={product.src || "/placeholder.svg"}
+                  src={product.src}
                   alt={product.name}
-                  className="max-w-full max-h-40 object-contain"
+                  className="max-w-full max-h-48 object-contain"
                 />
+                
+                {/* Discount Badge */}
+                {calculateDiscount(product.mrp, product.discountPrice) > 0 && (
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {calculateDiscount(product.mrp, product.discountPrice)}% OFF
+                  </div>
+                )}
               </div>
 
               {/* Product Info */}
-              <div className="p-4 sm:w-2/3">
-                <h3 className="text-lg font-semibold mb-1 text-gray-800">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                  {product.description}
-                </p>
+              <div className="p-6 sm:w-2/3 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-semibold text-[#39b54b] bg-[#39b54b]/10 px-2 py-1 rounded-full">
+                      {product.category}
+                    </span>
+                    <span className={`text-sm font-medium ${
+                      product.inStock ? "text-green-600" : "text-red-600"
+                    }`}>
+                      {product.inStock ? "In Stock" : "Out of Stock"}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">
+                    {product.name}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {product.description}
+                  </p>
+
+                  {/* Rating */}
+                  <div className="flex items-center mb-4">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600 ml-2">({product.reviews} reviews)</span>
+                  </div>
+                </div>
+
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="block text-gray-500 line-through text-sm">
+                    <span className="block text-gray-400 line-through text-sm">
                       ₹{product.mrp.toFixed(2)}
                     </span>
-                    <span className="text-xl font-bold text-gray-900">
+                    <span className="text-2xl font-bold text-gray-900">
                       ₹{product.discountPrice.toFixed(2)}
                     </span>
                   </div>
-                  <button className="px-4 py-2 text-sm text-white bg-[#39b54b] hover:bg-[#2da03e] rounded-md transition-colors">
-                    View Details
+                  <button 
+                    onClick={() => openProductModal(product)}
+                    className="px-6 py-3 text-white bg-gradient-to-r from-[#39b54b] to-[#2da03e] hover:from-[#2da03e] hover:to-[#259038] rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
+                  >
+                    <Eye className="w-4 h-4" />
+                    <span>View Details</span>
                   </button>
                 </div>
               </div>
@@ -628,6 +782,205 @@ export default function ProductGrid() {
           ))}
         </div>
       )}
+
+      {/* Animated Product Detail Modal */}
+      {showModal && selectedProduct && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
+          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-slideUp">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center rounded-t-3xl">
+              <h2 className="text-2xl font-bold text-gray-900">Product Details</h2>
+              <button
+                onClick={closeProductModal}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Product Image */}
+                <div className="relative">
+                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+                    <img
+                      src={selectedProduct.src}
+                      alt={selectedProduct.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Discount Badge */}
+                  {calculateDiscount(selectedProduct.mrp, selectedProduct.discountPrice) > 0 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full font-bold">
+                      {calculateDiscount(selectedProduct.mrp, selectedProduct.discountPrice)}% OFF
+                    </div>
+                  )}
+                </div>
+
+                {/* Product Info */}
+                <div>
+                  <div className="mb-4">
+                    <span className="text-sm font-semibold text-[#39b54b] bg-[#39b54b]/10 px-3 py-1 rounded-full">
+                      {selectedProduct.category}
+                    </span>
+                    <span className="text-sm text-gray-600 ml-3">Code: {selectedProduct.code}</span>
+                  </div>
+
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">
+                    {selectedProduct.name}
+                  </h1>
+
+                  {/* Rating and Reviews */}
+                  <div className="flex items-center mb-6">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`w-5 h-5 ${i < Math.floor(selectedProduct.rating ?? 0) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                        />
+                      ))}
+                    </div>
+                    <span className="text-lg font-semibold ml-2">{selectedProduct.rating}</span>
+                    <span className="text-gray-600 ml-2">({selectedProduct.reviews} reviews)</span>
+                  </div>
+
+                  {/* Price */}
+                  <div className="mb-6">
+                    <div className="flex items-center space-x-4">
+                      <span className="text-gray-400 line-through text-xl">
+                        ₹{selectedProduct.mrp.toFixed(2)}
+                      </span>
+                      <span className="text-4xl font-bold text-gray-900">
+                        ₹{selectedProduct.discountPrice.toFixed(2)}
+                      </span>
+                    </div>
+                    <p className="text-green-600 font-semibold mt-2">
+                      You save ₹{(selectedProduct.mrp - selectedProduct.discountPrice).toFixed(2)}
+                    </p>
+                  </div>
+
+                  {/* Stock Status */}
+                  <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
+                    selectedProduct.inStock 
+                      ? "bg-green-100 text-green-800" 
+                      : "bg-red-100 text-red-800"
+                  }`}>
+                    {selectedProduct.inStock ? "✓ In Stock" : "✗ Out of Stock"}
+                  </div>
+
+                  {/* Business Value */}
+                  <div className="bg-gradient-to-r from-[#39b54b]/10 to-[#2da03e]/10 rounded-2xl p-4 mb-6">
+                    <div className="flex items-center space-x-2">
+                      <Award className="w-5 h-5 text-[#39b54b]" />
+                      <span className="font-semibold text-gray-900">Business Value: ₹{selectedProduct.businessValue}</span>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex space-x-4 mb-8">
+                    <button className="flex-1 bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                      <ShoppingCart className="w-5 h-5" />
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Detailed Information Tabs */}
+              <div className="border-t border-gray-100 pt-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Description */}
+                  <div className="bg-gray-50 rounded-2xl p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                      <Zap className="w-5 h-5 text-[#39b54b] mr-2" />
+                      Description
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {selectedProduct.description}
+                    </p>
+                  </div>
+
+                  {/* Benefits */}
+                  <div className="bg-blue-50 rounded-2xl p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                      <Award className="w-5 h-5 text-blue-600 mr-2" />
+                      Key Benefits
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {selectedProduct.benefit}
+                    </p>
+                  </div>
+
+                  {/* Usage Tips */}
+                  <div className="bg-green-50 rounded-2xl p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                      <Users className="w-5 h-5 text-green-600 mr-2" />
+                      Usage Tips
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {selectedProduct.useTips}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+        
+        .animate-slideUp {
+          animation: slideUp 0.4s ease-out;
+        }
+        
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
     </div>
   );
 }
+

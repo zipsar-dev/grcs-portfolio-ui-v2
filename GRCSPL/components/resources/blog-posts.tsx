@@ -42,7 +42,7 @@ export default function BlogPosts() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {blogPosts.map((post) => (
-          <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-all ease-in">
+          <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden">
             <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h3 className="font-bold text-lg mb-2">{post.title}</h3>

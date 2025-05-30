@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function CallToAction() {
   return (
-    <section className="py-16 bg-[#39b54b]">
+    <section className="py-20 bg-[#39b54b]">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Business Journey?</h2>
@@ -17,7 +17,7 @@ export default function CallToAction() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="outline" className="border-white text-white bg-transparent hover:bg-white/10 px-8 py-3 text-lg">
+              <Button variant="outline" className="border-white text-green-500 hover:bg-white/10 hover:text-white px-8 py-3 text-lg">
                 Contact Us
               </Button>
             </Link>

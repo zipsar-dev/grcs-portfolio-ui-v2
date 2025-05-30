@@ -21,7 +21,7 @@ export default function BusinessOpportunityPage() {
       <div className="mt-12 space-y-16">
         <IncomeExamples />
         <RegistrationGuide />
-        <SuccessStories />
+        {/* <SuccessStories /> */}
         <FAQ />
       </div>
     </div>
