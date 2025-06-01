@@ -1,5 +1,7 @@
 "use client";
 import { User, Crown, Settings, Lightbulb, Star, Award } from "lucide-react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
 
 // Mock leadership data with icons instead of images
 const leaders = [
@@ -33,8 +35,25 @@ const leaders = [
 ]
 
 export default function Leadership() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.40 });
+
+  // Animation variants for the cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: index * 0.15
+      }
+    })
+  };
+
   return (
-    <section className="mt-24 px-4">
+    <section className="mt-24 px-4" ref={ref}>
       {/* Section Header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#39b54b] to-[#2da03e] rounded-full mb-6">
@@ -50,75 +69,77 @@ export default function Leadership() {
 
       {/* Leadership Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {leaders.map((leader, index) => {
-          const IconComponent = leader.icon;
-          return (
-            <div 
-              key={leader.id} 
-              className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              style={{
-                animationDelay: `${index * 150}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
-              }}
-            >
-              {/* Background Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-50"></div>
-              
-              {/* Card Content */}
-              <div className="relative p-8">
-                {/* Icon Container */}
-                <div className="relative mb-6">
-                  <div className={`w-20 h-20 bg-gradient-to-r ${leader.gradient} rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                    <IconComponent className="w-10 h-10 text-white" strokeWidth={1.5} />
+        <AnimatePresence>
+          {leaders.map((leader, index) => {
+            const IconComponent = leader.icon;
+            return (
+              <motion.div
+                key={leader.id}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                variants={cardVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                custom={index}
+              >
+                {/* Background Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-50"></div>
+                
+                {/* Card Content */}
+                <div className="relative p-8">
+                  {/* Icon Container */}
+                  <div className="relative mb-6">
+                    <div className={`w-20 h-20 bg-gradient-to-r ${leader.gradient} rounded-2xl flex items-center justify-center mx sausagetoast mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                      <IconComponent className="w-10 h-10 text-white" strokeWidth={1.5} />
+                    </div>
+                    
+                    {/* Floating decoration */}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center transform group-hover:scale-125 transition-transform duration-300">
+                      <Star className="w-3 h-3 text-white" fill="currentColor" />
+                    </div>
                   </div>
-                  
-                  {/* Floating decoration */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center transform group-hover:scale-125 transition-transform duration-300">
-                    <Star className="w-3 h-3 text-white" fill="currentColor" />
+
+                  {/* Leader Info */}
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#39b54b] transition-colors duration-300">
+                      {leader.name}
+                    </h3>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#39b54b]/10 to-[#2da03e]/10 rounded-full">
+                      <p className="text-[#39b54b] font-semibold text-sm">
+                        {leader.title}
+                      </p>
+                    </div>
                   </div>
+
+                  {/* Bio */}
+                  <p className="text-gray-600 text-center leading-relaxed mb-6 line-clamp-4">
+                    {leader.bio}
+                  </p>
+
+                  {/* Achievements */}
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-gray-800 mb-3 text-center">Key Achievements</h4>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {leader.achievements.map((achievement, idx) => (
+                        <span 
+                          key={idx}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full hover:bg-[#39b54b] hover:text-white transition-colors duration-300 cursor-default"
+                        >
+                          {achievement}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Accent */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${leader.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                 </div>
 
-                {/* Leader Info */}
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#39b54b] transition-colors duration-300">
-                    {leader.name}
-                  </h3>
-                  <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#39b54b]/10 to-[#2da03e]/10 rounded-full">
-                    <p className="text-[#39b54b] font-semibold text-sm">
-                      {leader.title}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bio */}
-                <p className="text-gray-600 text-center leading-relaxed mb-6 line-clamp-4">
-                  {leader.bio}
-                </p>
-
-                {/* Achievements */}
-                <div className="space-y-2">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-3 text-center">Key Achievements</h4>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {leader.achievements.map((achievement, idx) => (
-                      <span 
-                        key={idx}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full hover:bg-[#39b54b] hover:text-white transition-colors duration-300 cursor-default"
-                      >
-                        {achievement}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Accent */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${leader.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
-              </div>
-
-              {/* Hover Glow Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${leader.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}></div>
-            </div>
-          );
-        })}
+                {/* Hover Glow Effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${leader.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}></div>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
       </div>
 
       {/* Bottom CTA */}
