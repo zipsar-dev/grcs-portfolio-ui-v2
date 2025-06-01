@@ -36,7 +36,7 @@ export default function Benefits() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-all ease-in">
               <div className="mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
               <p className="text-gray-600">{benefit.description}</p>

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
@@ -9,6 +11,7 @@ import { Menu, X, Phone, MessageSquare } from "lucide-react";
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,6 +19,23 @@ export default function Header() {
 
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "ta" : "en");
+  };
+
+  const isActiveLink = (href:string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
+  const getLinkClasses = (href:string) => {
+    const baseClasses = "transition-all duration-300 ease-in-out relative";
+    const isActive = isActiveLink(href);
+    
+    if (isActive) {
+      return `${baseClasses} text-[#39b54b] font-medium`;
+    }
+    return `${baseClasses} text-gray-700 hover:text-[#39b54b]`;
   };
 
   return (
@@ -32,45 +52,129 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/")}
             >
-              {t("nav.home")}
+              <span className="relative">
+                {t("nav.home")}
+                {isActiveLink("/") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/about")}
             >
-              {t("nav.about")}
+              <span className="relative">
+                {t("nav.about")}
+                {isActiveLink("/about") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
             <Link
               href="/business-opportunity"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/business-opportunity")}
             >
-              {t("nav.business")}
+              <span className="relative">
+                {t("nav.business")}
+                {isActiveLink("/business-opportunity") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
             <Link
               href="/products"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/products")}
             >
-              {t("nav.products")}
+              <span className="relative">
+                {t("nav.products")}
+                {isActiveLink("/products") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
             <Link
               href="/events"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/events")}
             >
-              {t("nav.events")}
+              <span className="relative">
+                {t("nav.events")}
+                {isActiveLink("/events") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
             <Link
               href="/offers"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/offers")}
             >
-              {t("nav.offers")}
+              <span className="relative">
+                {t("nav.offers")}
+                {isActiveLink("/offers") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
             <Link
               href="/resources"
-              className="text-gray-700 hover:text-[#39b54b] transition-colors"
+              className={getLinkClasses("/resources")}
             >
-              {t("nav.resources")}
+              <span className="relative">
+                {t("nav.resources")}
+                {isActiveLink("/resources") && (
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#39b54b]"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    exit={{ scaleX: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ transformOrigin: "left" }}
+                  />
+                )}
+              </span>
             </Link>
           </nav>
 
@@ -79,7 +183,7 @@ export default function Header() {
             <Button
               variant="ghost"
               onClick={toggleLanguage}
-              className="text-gray-700"
+              className="text-gray-700 transition-colors duration-300 hover:text-[#39b54b]"
             >
               {language === "en" ? "தமிழ்" : "English"}
             </Button>
@@ -87,14 +191,18 @@ export default function Header() {
             <Link href="/associate-portal">
               <Button
                 variant="outline"
-                className="border-[#39b54b] text-[#39b54b] hover:bg-[#39b54b] hover:text-white"
+                className={`transition-all duration-300 ease-in-out ${
+                  isActiveLink("/associate-portal")
+                    ? "border-[#39b54b] bg-[#39b54b] text-white"
+                    : "border-[#39b54b] text-[#39b54b] hover:bg-[#39b54b] hover:text-white"
+                }`}
               >
                 {t("nav.portal")}
               </Button>
             </Link>
 
             <Link href="/contact">
-              <Button className="bg-[#39b54b] hover:bg-[#2da03e] text-white">
+              <Button className="bg-[#39b54b] hover:bg-[#2da03e] text-white transition-all duration-300 ease-in-out">
                 {t("nav.contact")}
               </Button>
             </Link>
@@ -102,7 +210,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden text-gray-700"
+            className="lg:hidden text-gray-700 transition-colors duration-300 hover:text-[#39b54b]"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -116,63 +224,63 @@ export default function Header() {
             <nav className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.home")}
               </Link>
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/about")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.about")}
               </Link>
               <Link
                 href="/business-opportunity"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/business-opportunity")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.business")}
               </Link>
               <Link
                 href="/products"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/products")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.products")}
               </Link>
               <Link
                 href="/events"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/events")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.events")}
               </Link>
               <Link
                 href="/offers"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/offers")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.offers")}
               </Link>
               <Link
                 href="/resources"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/resources")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.resources")}
               </Link>
               <Link
                 href="/associate-portal"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/associate-portal")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.portal")}
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-700 hover:text-[#39b54b] transition-colors"
+                className={`${getLinkClasses("/contact")} block py-2`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("nav.contact")}
@@ -182,20 +290,20 @@ export default function Header() {
                 <Button
                   variant="outline"
                   onClick={toggleLanguage}
-                  className="w-full justify-center"
+                  className="w-full justify-center transition-all duration-300 hover:border-[#39b54b] hover:text-[#39b54b]"
                 >
                   {language === "en" ? "தமிழ்" : "English"}
                 </Button>
               </div>
 
               <div className="flex space-x-4 pt-2">
-                <Button className="flex-1 bg-[#39b54b] hover:bg-[#2da03e]">
+                <Button className="flex-1 bg-[#39b54b] hover:bg-[#2da03e] transition-all duration-300 ease-in-out">
                   <Phone size={16} className="mr-2" />
                   Call Us
                 </Button>
                 <Button
                   variant="outline"
-                  className="flex-1 border-[#39b54b] text-[#39b54b]"
+                  className="flex-1 border-[#39b54b] text-[#39b54b] hover:bg-[#39b54b] hover:text-white transition-all duration-300 ease-in-out"
                 >
                   <MessageSquare size={16} className="mr-2" />
                   WhatsApp

@@ -17,7 +17,7 @@ export default function CallToAction() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="outline" className="border-white text-green-500 hover:bg-white/10 hover:text-white px-8 py-3 text-lg">
+              <Button variant="outline" className="border-white bg-transparent text-white hover:bg-white/10 hover:text-white px-8 py-3 text-lg">
                 Contact Us
               </Button>
             </Link>
