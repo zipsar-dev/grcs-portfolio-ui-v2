@@ -55,7 +55,7 @@ export default function RegistrationGuide() {
               <div className="absolute left-4 top-4 w-4 h-4 rounded-full bg-[#39b54b] transform -translate-x-1/2 z-10 md:hidden"></div>
 
               <div className="pl-10 md:pl-0">
-                <div className="bg-white p-6 rounded-lg shadow-md h-full">
+                <div className="bg-white p-6 rounded-lg shadow-md h-full hover:scale-105 transition-all ease-in">
                   <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-[#39b54b]/10 mb-4">
                     {step.icon}
                   </div>

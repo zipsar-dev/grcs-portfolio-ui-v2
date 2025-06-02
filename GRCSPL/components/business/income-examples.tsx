@@ -1,4 +1,6 @@
+'use client'
 import { TrendingUp, Users, ShoppingBag, Award } from "lucide-react"
+import { easeIn, motion } from "framer-motion"
 
 // Mock income examples
 const incomeExamples = [
@@ -29,25 +31,68 @@ const incomeExamples = [
 ]
 
 export default function IncomeExamples() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30, 
+      scale: 0.95 
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.20, 0.25, 0.30, 0.35] // Custom easing
+      }
+    }
+  }
+
   return (
     <section>
+    <motion.div
+    initial={{x:-100, opacity:0}}
+    animate={{x:0, opacity:1}}
+    transition={{ease:easeIn}}
+    >
       <h2 className="text-2xl font-bold mb-4">Income Potential</h2>
       <p className="text-gray-600 mb-8">
         Our business model offers multiple streams of income. Here are examples of how you can earn with us:
       </p>
+    </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {incomeExamples.map((example, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+          <motion.div 
+            key={index} 
+            className="bg-white p-6 rounded-lg shadow-md"
+            variants={itemVariants}
+          >
             <div className="mb-4">{example.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{example.title}</h3>
             <p className="text-gray-600 mb-2">{example.description}</p>
             <p className="text-sm bg-gray-50 p-3 rounded border-l-4 border-[#39b54b]">
               <strong>Example:</strong> {example.example}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
         <p className="text-sm text-gray-700">
