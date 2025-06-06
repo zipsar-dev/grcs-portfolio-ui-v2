@@ -6,6 +6,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#__nextjs-dev-overlay {
+  display: none !important;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

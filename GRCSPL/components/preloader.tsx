@@ -149,11 +149,11 @@ const FMCGPreloader = () => {
         {/* Network stats */}
         <div className="grid grid-cols-3 gap-4 text-center">
           <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 border border-green-100">
-            <div className="text-lg font-bold text-green-600">1K+</div>
-            <div className="text-xs text-gray-600">Partners</div>
+            <div className="text-lg font-bold text-green-600">1H+</div>
+            <div className="text-xs text-gray-600">Members</div>
           </div>
           <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 border border-green-100">
-            <div className="text-lg font-bold text-green-600">500+</div>
+            <div className="text-lg font-bold text-green-600">30+</div>
             <div className="text-xs text-gray-600">Products</div>
           </div>
           <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 border border-green-100">

@@ -68,7 +68,7 @@ export default function Hero() {
                 />
               ))}
             </div>
-            <div className="absolute -bottom-2 -left-10 bg-white p-4 rounded-lg shadow-lg">
+            {/* <div className="absolute -bottom-2 -left-10 bg-white p-4 rounded-lg shadow-lg">
               <div className="flex items-center space-x-2">
                 <div className="h-12 w-12 rounded-full bg-[#39b54b] flex items-center justify-center text-white font-bold text-xl">
                   ₹
@@ -78,7 +78,7 @@ export default function Hero() {
                   <p className="text-sm text-gray-600">Join as entrepreneurs</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

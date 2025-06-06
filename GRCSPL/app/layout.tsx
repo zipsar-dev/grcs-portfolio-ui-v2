@@ -7,9 +7,10 @@ import Footer from "@/components/layout/footer"
 import { LanguageProvider } from "@/components/language-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import FMCGPreloader from "@/components/preloader" 
+import { AiChatbot } from "@/components/chatbot";
+
+
 const inter = Inter({ subsets: ["latin"] })
-
-
 
 export const metadata: Metadata = {
   title: "GRCSPL | Home",
@@ -87,6 +88,8 @@ export default function RootLayout({
             <FMCGPreloader /> 
             <div className="flex min-h-screen flex-col">
               <Header />
+              <AiChatbot />
+              {/* AnnouncementBanner can be added here if needed */}
               <main className="flex-1">{children}</main>
               <Footer />
             </div>

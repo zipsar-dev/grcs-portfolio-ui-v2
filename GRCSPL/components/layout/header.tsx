@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
+import devtools from 'devtools-detect';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
 
@@ -17,6 +18,46 @@ export default function Header() {
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "ta" : "en");
   };
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const disableContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+    window.addEventListener("contextmenu", disableContextMenu);
+    return () => {
+      window.removeEventListener("contextmenu", disableContextMenu);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey &&
+          e.shiftKey &&
+          (e.key === "I" || e.key === "J" || e.key === "C")) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    const checkDevTools = () => {
+      if (devtools.isOpen) {
+        window.close(); // or redirect or blank out screen
+      }
+    };
+    const interval = setInterval(checkDevTools, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <header className="bg-white shadow-sm">

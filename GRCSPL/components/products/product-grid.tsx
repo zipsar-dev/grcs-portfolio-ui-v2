@@ -879,12 +879,16 @@ export default function ProductSection() {
                   </div>
 
                   {/* Action Buttons */}
+                  <a href="https://pages.razorpay.com/stores/st_QD6JmHuMK8AMiy">
                   <div className="flex space-x-4 mb-8">
+                    
                     <button className="flex-1 bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
                       <ShoppingCart className="w-5 h-5" />
-                      <span>Add to Cart</span>
+                      <span>Buy Now</span>
                     </button>
+                    
                   </div>
+                  </a>
                 </div>
               </div>
 

@@ -12,9 +12,9 @@ export default function ContactInfo() {
           <div>
             <h4 className="font-medium mb-1">Head Office</h4>
             <p className="text-gray-600">
-              123 Business Street, T. Nagar
+              Periyanaikenpalayam
               <br />
-              Chennai, Tamil Nadu 600017
+              Coimbatore, Tamil Nadu 641020
               <br />
               India
             </p>
@@ -27,8 +27,8 @@ export default function ContactInfo() {
             <h4 className="font-medium mb-1">Phone</h4>
             <p className="text-gray-600">
               Toll-Free:{" "}
-              <a href="tel:+918000000000" className="hover:text-[#39b54b]">
-                +91 8000 000 000
+              <a href="tel:+918925532450" className="hover:text-[#39b54b]">
+                +91 892 553 2450
               </a>
               <br />
               Support:{" "}
@@ -45,13 +45,13 @@ export default function ContactInfo() {
             <h4 className="font-medium mb-1">Email</h4>
             <p className="text-gray-600">
               General Inquiries:{" "}
-              <a href="mailto:info@businesstn.com" className="hover:text-[#39b54b]">
-                info@businesstn.com
+              <a href="mailto:office@grcspl.com" className="hover:text-[#39b54b]">
+                office@grcspl.com
               </a>
               <br />
               Support:{" "}
-              <a href="mailto:support@businesstn.com" className="hover:text-[#39b54b]">
-                support@businesstn.com
+              <a href="mailto:support@grcspl.com" className="hover:text-[#39b54b]">
+                support@grcspl.com
               </a>
             </p>
           </div>
@@ -75,14 +75,18 @@ export default function ContactInfo() {
       <div className="mt-8">
         <h4 className="font-medium mb-3">Connect With Us</h4>
         <div className="flex space-x-3">
+          <a href="tel:+918925532450">
           <Button className="bg-[#39b54b] hover:bg-[#2da03e] flex-1">
             <Phone className="h-5 w-5 mr-2" />
             Call Now
           </Button>
-          <Button variant="outline" className="border-[#39b54b] text-[#39b54b] flex-1">
-            <MessageSquare className="h-5 w-5 mr-2" />
-            WhatsApp
-          </Button>
+          </a>
+          <a href="https://wa.me/+918925532450">
+            <Button variant="outline" className="border-[#39b54b] text-[#39b54b] flex-1">
+              <MessageSquare className="h-5 w-5 mr-2" />
+              WhatsApp
+            </Button>
+          </a>
         </div>
       </div>
     </div>
