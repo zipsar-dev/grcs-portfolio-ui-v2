@@ -14,7 +14,7 @@ const leaders = [
   },
   {
     id: 2,
-    name: "Miss.Selvi",
+    name: "Mrs.Selvi",
     title: "Chief Operating Officer",
     bio: "A futuristic operational strategist, the COO drives seamless daily functions, ensuring efficient distribution, associate support, and scalable growth across Tamil Nadu, enhancing the impact of our FMCG product network.",
     icon: Settings,

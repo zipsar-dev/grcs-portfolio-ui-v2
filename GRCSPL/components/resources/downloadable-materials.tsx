@@ -58,9 +58,9 @@ export default function DownloadableMaterials() {
     <section className="mt-16">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Downloadable Materials</h2>
-        <Button variant="outline" className="border-[#39b54b] text-[#39b54b]">
+        {/* <Button variant="outline" className="border-[#39b54b] text-[#39b54b]">
           View All Resources
-        </Button>
+        </Button> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

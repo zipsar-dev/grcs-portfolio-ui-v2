@@ -62,7 +62,7 @@ export default function FeaturedProducts() {
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-xl font-bold text-gray-900">starting from ₹{product.price}</span>
-                  <Link href={`/products/product-${product.id}`}>
+                  <Link href={`/products`}>
                     <Button className="bg-[#39b54b] hover:bg-[#2da03e]">Learn More</Button>
                   </Link>
                 </div>

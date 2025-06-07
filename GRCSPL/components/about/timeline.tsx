@@ -1,14 +1,19 @@
 // Mock timeline data
 const timelineEvents = [
   {
-    year: 2024,
+    year: 2023,
     title: "Company Founded",
     description: "Started operations in Coimbatore with a small team of 5 people.",
   },
   {
-    year: 2025,
+    year: 2024,
     title: "Website Launch",
     description: "Launched our first website to connect with customers and associates.",
+  },
+  {
+    year: 2025,
+    title: "Website 2.0 Launch",
+    description: "Upgraded our website with new features and improved user experience.",
   },
 ]
 

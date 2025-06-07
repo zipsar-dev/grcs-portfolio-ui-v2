@@ -3,15 +3,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { X, Gift, Star, Clock, ArrowRight } from "lucide-react";
 import confetti from "canvas-confetti";
-import { initMixpanel} from '@/lib/mixpanelClient';
+import { initMixpanel } from "@/lib/mixpanelClient";
+import { useRouter } from "next/navigation";
 
 const OfferPopupCard = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [timeLeft, setTimeLeft] = useState("");
   const confettiRef = useRef<HTMLCanvasElement>(null);
+  const router = useRouter();
 
   const expiryDate = new Date();
-  expiryDate.setDate(expiryDate.getDate() + 2); 
+  expiryDate.setDate(expiryDate.getDate() + 2);
 
   // Countdown logic
   useEffect(() => {
@@ -48,24 +50,24 @@ const OfferPopupCard = () => {
   }, []);
 
   const handleClaimOffer = () => {
-    console.log("✅ Claim Offer Clicked - Send to Analytics");
-    initMixpanel(); // Initialize Mixpanel);
-
+    initMixpanel();
+    window.location.href = "https://pages.razorpay.com/stores/st_QD6JmHuMK8AMiy";
     confetti({
       particleCount: 120,
       spread: 80,
       origin: { y: 0.6 },
       colors: ["#39b54b", "#ffffff", "#facc15"],
     });
-
-    // Do more analytics work here
   };
 
   if (!isVisible) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <canvas ref={confettiRef} className="absolute inset-0 pointer-events-none" />
+      <canvas
+        ref={confettiRef}
+        className="absolute inset-0 pointer-events-none"
+      />
 
       <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden transform transition-all duration-300 scale-100 hover:scale-[1.02]">
         {/* Close Button */}
@@ -105,7 +107,9 @@ const OfferPopupCard = () => {
           <div className="flex items-center justify-center gap-2 mb-6 text-orange-600">
             <Clock className="w-5 h-5" />
             <span className="font-semibold">
-              {timeLeft === "Expired" ? "Offer expired" : `Expires in ${timeLeft}`}
+              {timeLeft === "Expired"
+                ? "Offer expired"
+                : `Expires in ${timeLeft}`}
             </span>
           </div>
 

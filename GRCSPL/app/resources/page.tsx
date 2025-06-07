@@ -20,7 +20,7 @@ export default function ResourcesPage() {
       <div className="mt-12 space-y-16">
         <TrainingVideos />
         <BlogPosts />
-        <DownloadableMaterials />
+        {/* <DownloadableMaterials /> */}
       </div>
     </div>
   )

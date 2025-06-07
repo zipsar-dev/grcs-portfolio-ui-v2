@@ -278,25 +278,19 @@ export function AiChatbot() {
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
-        {/* Floating Message 
-        {showMessage && (
-          <motion.div
-            className="mt-2 rounded-xl bg-white px-3 py-2 text-sm shadow-lg"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Need help?
-          </motion.div>
-        )}*/}
-
-        {/* Robot GIF */}
-        <img
+        <motion.img
           key={Date.now()}
-          src="/robo.gif" // Place your gif in public folder
-          alt="Robot assistant"
-          className="w-[150px] h-[150px] cursor-pointer"
+          src="/robo.gif"
+          alt="Robot assistant" 
+          className="w-[125px] h-[125px] cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ 
+            type: "spring",
+            duration: 1.8,
+            ease: "easeOut"
+          }}
         />
 
         {/* Music */}

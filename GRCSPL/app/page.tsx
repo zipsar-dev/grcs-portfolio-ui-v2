@@ -16,7 +16,7 @@ export default function Home() {
     initMixpanel(); // Initialize Mixpanel
   }, []);
   return (
-    <div className="flex flex-col gap-16 py-8">
+    <div className="flex flex-col gap-16">
       <OfferPopupCard />
       <Hero />
       <Benefits />
