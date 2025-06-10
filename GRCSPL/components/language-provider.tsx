@@ -28,7 +28,7 @@ export const translations = {
     "hero.title": "Build Your Business in Tamil Nadu",
     "hero.subtitle": "Join our network of successful entrepreneurs",
     "hero.cta": "Get Started Today",
-    "hero.learnMore": "Learn More",
+    "hero.learnMore": "View Products",
     "announcements": [
       "Big discounts available this month!",
       "Join our upcoming business event!",

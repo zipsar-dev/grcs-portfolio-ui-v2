@@ -6,16 +6,19 @@ import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 
+
 export default function Hero() {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
     "/banner/1.jpg",
     "/banner/2.jpg",
-    "/banner/3.jpg",
-    "/banner/4.png",
     "/banner/5.jpg",
     "/banner/6.jpg",
+    "/banner/7.jpg",
+    "/banner/8.jpg",
+    "/banner/9.jpg",
+    "/banner/10.jpg",
   ];
 
   useEffect(() => {
@@ -44,7 +47,7 @@ export default function Hero() {
                   {t("hero.cta")}
                 </Button>
               </Link>
-              <Link href="/about">
+              <Link href="/products">
                 <Button
                   variant="outline"
                   className="border-[#39b54b] text-[#39b54b] hover:bg-[#f0f9f1] px-6 py-3 text-lg"

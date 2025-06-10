@@ -1,16 +1,15 @@
-import type React from "react"
+import type React from "react";
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google"
-import "./globals.css"
-import Header from "@/components/layout/header"
-import Footer from "@/components/layout/footer"
-import { LanguageProvider } from "@/components/language-provider"
-import { ThemeProvider } from "@/components/theme-provider"
-import FMCGPreloader from "@/components/preloader" 
-import { AiChatbot } from "@/components/chatbot";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import { LanguageProvider } from "@/components/language-provider";
+import { ThemeProvider } from "@/components/theme-provider";
+import FMCGPreloader from "@/components/preloader";
 
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "GRCSPL | Home",
@@ -58,8 +57,8 @@ export const metadata: Metadata = {
   },
   other: {
     "apple-mobile-web-app-capable": "yes",
-    "handheldfriendly": "true",
-    "mobileoptimized": "width",
+    handheldfriendly: "true",
+    mobileoptimized: "width",
     "revisit-after": "7 days",
     "theme-color": "#39b54b",
     copyright: "GEEAAR Consumer Solutions Private Limited",
@@ -74,21 +73,23 @@ export const viewport: Viewport = {
   initialScale: 1.0,
 };
 
-
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
           <LanguageProvider>
-            <FMCGPreloader /> 
+            <FMCGPreloader />
             <div className="flex min-h-screen flex-col">
               <Header />
-              <AiChatbot />
               {/* AnnouncementBanner can be added here if needed */}
               <main className="flex-1">{children}</main>
               <Footer />
@@ -97,5 +98,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

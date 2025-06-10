@@ -1,9 +1,9 @@
 "use client";
 
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
-import devtools from 'devtools-detect';
+import devtools from "devtools-detect";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
 
@@ -57,7 +57,6 @@ export default function Header() {
     const interval = setInterval(checkDevTools, 1000);
     return () => clearInterval(interval);
   }, []);
-
 
   return (
     <header className="bg-white shadow-sm">

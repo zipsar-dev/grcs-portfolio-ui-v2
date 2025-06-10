@@ -9,6 +9,7 @@ import TrustBadges from "@/components/home/trust-badges"
 import CallToAction from "@/components/home/call-to-action"
 import OfferPopupCard from "@/components/Popup/popup"
 import { initMixpanel } from "@/lib/mixpanelClient"
+import { AiChatbot } from "@/components/chatbot";
 
 export default function Home() {
   
@@ -17,6 +18,7 @@ export default function Home() {
   }, []);
   return (
     <div className="flex flex-col gap-16">
+      <AiChatbot />
       <OfferPopupCard />
       <Hero />
       <Benefits />

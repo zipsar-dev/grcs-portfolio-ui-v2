@@ -1,17 +1,43 @@
 "use client";
-import React, { useState,useEffect } from "react";
-import { Search, Grid, List, X, Star, ShoppingCart, Eye, Zap, Award, Users,TrendingUp,Gift,ChevronLeft,ChevronRight } from "lucide-react";
 
-interface ProductDetails {
+import React, { useState, useEffect } from "react";
+import ProductsPage from "@/components/productcart/ProductsPage";
+import CartPage from "@/components/productcart/CartPage";
+import CheckoutPage from "@/components/productcart/check";
+import SuccessPage from "@/components/productcart/SuccessPage";
+import { Star, X, ShoppingCart, Award, Zap, Users } from "lucide-react";
+import OfferPopupCard from "@/components/Popup/sidepopup";
+
+// Define types based on your data
+interface Product {
   name: string;
   category: string;
+  src: string;
   code: string;
   mrp: number;
   discountPrice: number;
   businessValue: number;
   description: string;
   benefit: string;
-  usageTips: string;
+  usageTips?: string;
+  useTips?: string;
+  inStock?: boolean;
+  rating?: number;
+  reviews?: number;
+}
+
+interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
+interface CustomerInfo {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  city: string;
+  pincode: string;
 }
 
 const productsRaw = [
@@ -24,6 +50,9 @@ const productsRaw = [
       mrp: 215.0,
       discountPrice: 195.0,
       businessValue: 47,
+      rating: 4.5,
+      reviews: 128,
+      inStock: true,
       description:
         "An advanced liquid detergent that effectively removes stains while being gentle on fabrics, leaving clothes fresh and clean.",
       benefit:
@@ -38,7 +67,10 @@ const productsRaw = [
       code: "HN1002",
       mrp: 155.0,
       discountPrice: 145.0,
-      businessValue: 35,
+      businessValue: 352,
+      rating: 4.5,
+      reviews: 128,
+      inStock: true,
       description:
         "A powerful toilet cleaner formulated to remove tough stains, kill germs, and leave toilets sparkling clean.",
       benefit:
@@ -54,6 +86,9 @@ const productsRaw = [
       mrp: 146.0,
       discountPrice: 126.0,
       businessValue: 30,
+      rating: 3.5,
+      reviews:8,
+      inStock: true,
       description:
         "A premium after-wash fabric conditioner that adds softness and freshness to your clothes.",
       benefit:
@@ -69,6 +104,9 @@ const productsRaw = [
       mrp: 68.0,
       discountPrice: 64.0,
       businessValue: 15,
+      rating: 4.3,
+      reviews: 562,
+      inStock: true,
       description:
         "A durable and efficient kitchen scrub designed for heavy-duty cleaning, perfect for scrubbing away tough food residues and stains from utensils and surfaces.",
       benefit:
@@ -84,6 +122,9 @@ const productsRaw = [
       mrp: 135.0,
       discountPrice: 90.0,
       businessValue: 22,
+      rating: 4.2,
+      reviews: 108,
+      inStock: true,
       description:
         "A versatile scrubber suitable for various cleaning tasks, ensuring spotless results on multiple surfaces.",
       benefit:
@@ -100,6 +141,9 @@ const productsRaw = [
       mrp: 180.0,
       discountPrice: 150.0,
       businessValue: 37,
+      rating: 4.0,
+      reviews: 58,
+      inStock: true,
       description:
         "A concentrated stain remover specially designed to tackle stubborn stains on clothes, upholstery, and more.",
       benefit:
@@ -115,6 +159,9 @@ const productsRaw = [
       mrp: 390.0,
       discountPrice: 360.0,
       businessValue: 86,
+      rating: 4.3,
+      reviews:82,
+      inStock: true,
       description:
         "A specialized cleaner for bathroom tiles that removes dirt, grime, and watermarks, leaving surfaces sparkling clean.",
       benefit:
@@ -130,6 +177,9 @@ const productsRaw = [
       mrp: 220.0,
       discountPrice: 190.0,
       businessValue: 48,
+      rating: 4.8,
+      reviews: 528,
+      inStock: true,
       description:
         "A high-performance liquid dishwashing solution designed to cut through grease and tough food residues effectively.",
       benefit:
@@ -145,6 +195,9 @@ const productsRaw = [
       mrp: 165.0,
       discountPrice: 154.0,
       businessValue: 37,
+      rating: 4.0,
+      reviews: 328,
+      inStock: true,
       description:
         "A versatile floor cleaner that disinfects and leaves a pleasant fragrance, ensuring a clean and germ-free environment.",
       benefit:
@@ -160,6 +213,9 @@ const productsRaw = [
       mrp: 250.0,
       discountPrice: 230.0,
       businessValue: 55,
+      rating: 4.5,
+      reviews:58,
+      inStock: true,
       description:
         "A streak-free glass cleaner that ensures crystal-clear surfaces with minimal effort.",
       benefit:
@@ -175,6 +231,9 @@ const productsRaw = [
       mrp: 975.0,
       discountPrice: 780.0,
       businessValue: 187,
+      rating: 4.5,
+      reviews: 18,
+      inStock: true,
       description:
         "A powerful supplement enriched with the goodness of Moringa, packed with essential vitamins, minerals, and antioxidants.",
       benefit:
@@ -190,6 +249,9 @@ const productsRaw = [
       mrp: 1140.0,
       discountPrice: 950.0,
       businessValue: 227,
+      rating: 5.0,
+      reviews: 11,
+      inStock: true,
       description:
         "A specially formulated capsule to provide relief from joint pain and improve mobility.",
       benefit:
@@ -205,6 +267,9 @@ const productsRaw = [
       mrp: 1190.0,
       discountPrice: 930.0,
       businessValue: 223,
+      rating: 4.5,
+      reviews: 28,
+      inStock: true,
       description:
         "An energy-enhancing supplement designed to boost stamina and endurance naturally.",
       benefit:
@@ -220,6 +285,9 @@ const productsRaw = [
       mrp: 399.0,
       discountPrice: 370.0,
       businessValue: 89,
+      rating: 4.3,
+      reviews: 118,
+      inStock: true,
       description:
         "A refreshing and nutrient-rich organic Moringa tea to rejuvenate your body and mind.",
       benefit:
@@ -235,6 +303,9 @@ const productsRaw = [
       mrp: 180.0,
       discountPrice: 150.0,
       businessValue: 37,
+      rating: 4.9,
+      reviews: 58,
+      inStock: true,
       description:
         "An effective herbal pain relief oil to alleviate aches and soreness in muscles and joints.",
       benefit:
@@ -250,6 +321,9 @@ const productsRaw = [
       mrp: 99.0,
       discountPrice: 99.0,
       businessValue: 24,
+      rating: 4.2,
+      reviews: 58,
+      inStock: true,
       description:
         "A soothing and hydrating aloe vera gel enriched with natural extracts to nourish and rejuvenate your skin.",
       benefit:
@@ -265,6 +339,9 @@ const productsRaw = [
       mrp: 60.0,
       discountPrice: 55.0,
       businessValue: 13,
+      rating: 4.5,
+      reviews: 368,
+      inStock: true,
       description:
         "A luxurious soap infused with aloe vera and milk to cleanse and nourish your skin naturally.",
       benefit:
@@ -280,6 +357,9 @@ const productsRaw = [
       mrp: 60.0,
       discountPrice: 55.0,
       businessValue: 13,
+      rating: 3.8,
+      reviews: 418,
+      inStock: true,
       description:
         "An invigorating soap made with lemongrass extracts to refresh and purify your skin.",
       benefit:
@@ -295,6 +375,9 @@ const productsRaw = [
       mrp: 210.0,
       discountPrice: 175.0,
       businessValue: 41,
+      rating: 4.7,
+      reviews: 158,
+      inStock: true,
       description:
         "A nutrient-rich hair oil with red onion extracts to strengthen hair and promote healthy growth.",
       benefit:
@@ -310,6 +393,9 @@ const productsRaw = [
       mrp: 152.0,
       discountPrice: 142.0,
       businessValue: 34,
+      rating: 4.1,
+      reviews:28,
+      inStock: true,
       description:
         "A nourishing body lotion formulated to provide long-lasting hydration and softness to your skin.",
       benefit:
@@ -325,6 +411,9 @@ const productsRaw = [
       mrp: 195.0,
       discountPrice: 170.0,
       businessValue: 41,
+      rating: 4.5,
+      reviews: 210,
+      inStock: true,
       description:
         "An effective anti-dandruff shampoo designed to cleanse and nourish your scalp while eliminating dandruff.",
       benefit:
@@ -340,6 +429,9 @@ const productsRaw = [
       mrp: 185.0,
       discountPrice: 165.0,
       businessValue: 40,
+      rating: 4.3,
+      reviews: 188,
+      inStock: true,
       description:
         "A herbal shampoo enriched with natural ingredients to cleanse and nourish hair, leaving it soft and shiny.",
       benefit:
@@ -355,6 +447,9 @@ const productsRaw = [
       mrp: 175.0,
       discountPrice: 160.0,
       businessValue: 38,
+      rating: 4.8,
+      reviews: 78,
+      inStock: true,
       description:
         "A refreshing body wash infused with gentle cleansers and natural extracts to leave your skin soft and fragrant.",
       benefit:
@@ -370,6 +465,9 @@ const productsRaw = [
       mrp: 110.0,
       discountPrice: 99.0,
       businessValue: 24,
+      rating: 4.8,
+      reviews: 428,
+      inStock: true,
       description:
         "A compact face wash cake formulated to cleanse and refresh your skin, removing dirt and impurities.",
       benefit:
@@ -385,6 +483,9 @@ const productsRaw = [
       mrp: 450.0,
       discountPrice: 405.0,
       businessValue: 97,
+      rating: 4.5,
+      reviews: 23,
+      inStock: true,
       description:
         "A premium plastic restorer that revives and protects dull and faded plastic surfaces on your vehicle, providing a showroom-like shine.",
       benefit:
@@ -400,6 +501,9 @@ const productsRaw = [
       mrp: 250.0,
       discountPrice: 210.0,
       businessValue: 50,
+      rating: 3.5,
+      reviews: 18,
+      inStock: true,
       description:
         "A specially formulated polish for maintaining the shine and cleanliness of your car's interior surfaces, keeping them looking brand new.",
       benefit:
@@ -415,6 +519,9 @@ const productsRaw = [
       mrp: 250.0,
       discountPrice: 210.0,
       businessValue: 50,
+      rating: 4.7,
+      reviews: 110,
+      inStock: true,
       description:
         "An advanced cleaning liquid for car windshields and windows, removing dirt, grime, and water spots effectively.",
       benefit:
@@ -430,6 +537,9 @@ const productsRaw = [
       mrp: 285.0,
       discountPrice: 240.0,
       businessValue: 58,
+      rating: 4.6,
+      reviews: 88,
+      inStock: true,
       description:
         "A specialized shine formula designed for car dashboards, offering a glossy, non-greasy finish that lasts long.",
       benefit:
@@ -445,6 +555,9 @@ const productsRaw = [
       mrp: 145.0,
       discountPrice: 120.0,
       businessValue: 29,
+      rating: 4.2,
+      reviews: 135,
+      inStock: true,
       description:
         "A high-foam car shampoo that lifts dirt and grime effectively while being gentle on your car's paint.",
       benefit:
@@ -460,6 +573,9 @@ const productsRaw = [
       mrp: 540.0,
       discountPrice: 450.0,
       businessValue: 105,
+      rating: 5.0,
+      reviews: 11,
+      inStock: true,
       description:
         "A cutting-edge windshield protector that provides a hydrophobic coating, repelling water and improving driving visibility.",
       benefit:
@@ -475,6 +591,9 @@ const productsRaw = [
       mrp: 520.0,
       discountPrice: 480.0,
       businessValue: 115,
+      rating: 5.0,
+      reviews: 20,
+      inStock: true,
       description:
         "An effective solution for removing water spots and mineral deposits from your vehicle's surfaces, restoring clarity and shine.",
       benefit:
@@ -482,314 +601,241 @@ const productsRaw = [
       useTips:
         "Spray directly onto the affected area. Use a microfiber cloth to scrub gently and wipe away the residue for a clean look.",
     },
-  }
+  },
 ];
 
-
-const products = [
-  ...Object.values(productsRaw[0]).map((p: any) => ({
-    ...p,
-    useTips: p.useTips ?? p.usageTips,
-    rating: p.rating ?? 4.5,
-    reviews: p.reviews ?? 0,
-    inStock: p.inStock ?? true,
-  })),
-  ...productsRaw.slice(1)
-];
-
-export default function ProductSection() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [viewMode, setViewMode] = useState("grid");
+const ProductGrid = () => {
+  const [currentPage, setCurrentPage] = useState<string>("products");
+  const [products] = useState<Product[]>(Object.values(productsRaw[0]));
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [viewMode, setViewMode] = useState<string>("grid");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [showModal, setShowModal] = useState(false);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    pincode: "",
+  });
+  // Add paymentMethod to the state
+  const [paymentMethod, setPaymentMethod] = useState<string>("");
 
-  const filteredProducts = products.filter(product =>
-    typeof product.name === "string" && product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    typeof product.category === "string" && product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    typeof product.code === "string" && product.code.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Add to cart
+  const addToCart = (product: Product) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) => item.product.code === product.code
+      );
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.product.code === product.code
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prevCart, { product, quantity: 1 }];
+    });
+  };
 
-  interface Product {
-    name: string;
-    src: string;
-    category: string;
-    code: string;
-    mrp: number;
-    discountPrice: number;
-    businessValue: number;
-    description: string;
-    benefit: string;
-    useTips?: string;
-    usageTips?: string;
-    rating?: number;
-    reviews?: number;
-    inStock?: boolean;
-  }
+  // Update cart quantity
+  const updateCartQuantity = ({
+    productCode,
+    newQuantity,
+  }: {
+    productCode: string;
+    newQuantity: number;
+  }) => {
+    if (newQuantity <= 0) {
+      removeFromCart(productCode);
+      return;
+    }
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.product.code === productCode
+          ? { ...item, quantity: newQuantity }
+          : item
+      )
+    );
+  };
 
+  // Remove from cart
+  const removeFromCart = (productCode: string) => {
+    setCart((prevCart) =>
+      prevCart.filter((item) => item.product.code !== productCode)
+    );
+  };
+
+  // Get total cart value
+  const getCartTotal = () => {
+    return cart.reduce(
+      (total, item) => total + item.product.discountPrice * item.quantity,
+      0
+    );
+  };
+
+  // Handle customer info change
+  const handleCustomerInfoChange = (
+    field: keyof CustomerInfo,
+    value: string
+  ) => {
+    setCustomerInfo((prev) => ({ ...prev, [field]: value }));
+  };
+
+  // Modify handleCheckout to include paymentMethod
+  const handleCheckout = () => {
+    setTimeout(() => {
+      setCurrentPage("success");
+    }, 1000);
+  };
+
+  // Open product modal
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
-    setShowModal(true);
-    document.body.style.overflow = 'hidden';
   };
 
+  // Close product modal
   const closeProductModal = () => {
-    setShowModal(false);
     setSelectedProduct(null);
-    document.body.style.overflow = 'unset';
   };
 
-  interface CalculateDiscount {
-    (mrp: number, discountPrice: number): number;
+  function calculateDiscount(mrp: number, discountPrice: number) {
+    const discount = ((mrp - discountPrice) / mrp) * 100;
+    return Math.round(discount);
   }
 
-  const calculateDiscount: CalculateDiscount = (mrp, discountPrice) => {
-    return Math.round(((mrp - discountPrice) / mrp) * 100);
-  };
-
+  // Render current page
   return (
-    <div className="p-4 md:p-6 relative">
-     
-      {/* Search Bar & View Toggle */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
-        <div className="relative w-full sm:w-80">
-          <input
-            type="text"
-            placeholder="Search products..."
-            className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#39b54b] focus:border-[#39b54b] transition-all duration-300 bg-white shadow-sm"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-        </div>
-
-        <div className="flex items-center space-x-4 bg-gray-50 rounded-2xl p-2">
-          <span className="text-sm text-gray-600 font-medium px-2">View:</span>
-          <button
-            className={`p-2.5 rounded-xl transition-all duration-300 ${
-              viewMode === "grid" 
-                ? "bg-[#39b54b] text-white shadow-lg transform scale-105" 
-                : "text-gray-600 hover:bg-white hover:shadow-md"
-            }`}
-            onClick={() => setViewMode("grid")}
-            aria-label="Grid view"
-          >
-            <Grid className="h-5 w-5" />
-          </button>
-          <button
-            className={`p-2.5 rounded-xl transition-all duration-300 ${
-              viewMode === "list" 
-                ? "bg-[#39b54b] text-white shadow-lg transform scale-105" 
-                : "text-gray-600 hover:bg-white hover:shadow-md"
-            }`}
-            onClick={() => setViewMode("list")}
-            aria-label="List view"
-          >
-            <List className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
-
-      {/* No Result Found */}
-      {filteredProducts.length === 0 ? (
-        <div className="text-center py-16">
-          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Search className="w-12 h-12 text-gray-400" />
-          </div>
-          <p className="text-xl text-gray-600 mb-2">No products found</p>
-          <p className="text-gray-500">Try adjusting your search terms</p>
-        </div>
-      ) : viewMode === "grid" ? (
-        // Enhanced Grid View
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.map((product, index) => (
-            <div
-              key={product.code}
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
-              style={{
-                animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
-              }}
-            >
-              {/* Product Image with Overlay */}
-              <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
-                <img
-                  src={product.src}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                
-                {/* Discount Badge */}
-                {typeof product.mrp === "number" && typeof product.discountPrice === "number" && calculateDiscount(product.mrp, product.discountPrice) > 0 && (
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {calculateDiscount(product.mrp, product.discountPrice)}% OFF
-                  </div>
-                )}
-
-                {/* Stock Status */}
-                <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${
-                  product.inStock 
-                    ? "bg-green-100 text-green-800" 
-                    : "bg-red-100 text-red-800"
-                }`}>
-                  {product.inStock ? "In Stock" : "Out of Stock"}
-                </div>
-
-                {/* Quick View Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button
-                    onClick={() => openProductModal(product)}
-                    className="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold flex items-center space-x-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+    <div className="min-h-screen bg-gray-50">
+      {/* Offer Popup Card */}
+      <OfferPopupCard />
+      {/* Product Detail Modal */}
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-green-700 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setCurrentPage("products")}
+                className="text-2xl font-bold text-[#39b54b] hover:text-[#2da03e] transition-colors"
+              >
+                GRCSPL Store
+              </button>
+              {currentPage !== "products" && (
+                <button
+                  onClick={() =>
+                    setCurrentPage(
+                      currentPage === "checkout" ? "cart" : "products"
+                    )
+                  }
+                  className="flex items-center text-gray-600 hover:text-[#39b54b] transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <Eye className="w-4 h-4" />
-                    <span>Quick View</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="p-6">
-                <div className="mb-3">
-                  <span className="text-xs font-semibold text-[#39b54b] bg-[#39b54b]/10 px-2 py-1 rounded-full">
-                    {product.category}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                  Back
+                </button>
+              )}
+            </div>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setCurrentPage("cart")}
+                className="relative p-2 text-gray-600 hover:text-[#39b54b] transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
+                </svg>
+                {cart.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {cart.reduce((acc, item) => acc + item.quantity, 0)}
                   </span>
-                </div>
-                
-                <h3 className="text-lg font-bold mb-2 text-gray-800 line-clamp-2 group-hover:text-[#39b54b] transition-colors">
-                  {product.name}
-                </h3>
-                
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                  {product.description}
-                </p>
-
-                {/* Rating */}
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                      />
-                    ))}
-                  </div>
-                  <span className="text-sm text-gray-600 ml-2">({product.reviews})</span>
-                </div>
-
-                {/* Price and Action */}
-                <div className="flex justify-between items-center">
-                  <div>
-                    <span className="block text-gray-400 line-through text-sm">
-                      ₹{product.mrp.toFixed(2)}
-                    </span>
-                    <span className="text-2xl font-bold text-gray-900">
-                      ₹{product.discountPrice.toFixed(2)}
-                    </span>
-                  </div>
-                  <button 
-                    onClick={() => openProductModal(product)}
-                    className="px-4 py-2 text-sm text-white bg-gradient-to-r from-[#39b54b] to-[#2da03e] hover:from-[#2da03e] hover:to-[#259038] rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        // Enhanced List View
-        <div className="space-y-6">
-          {filteredProducts.map((product, index) => (
-            <div
-              key={product.code}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col sm:flex-row border border-gray-100"
-              style={{
-                animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
-              }}
-            >
-              {/* Image */}
-              <div className="sm:w-1/3 aspect-square sm:aspect-auto bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6 relative">
-                <img
-                  src={product.src}
-                  alt={product.name}
-                  className="max-w-full max-h-48 object-contain"
-                />
-                
-                {/* Discount Badge */}
-                {calculateDiscount(product.mrp, product.discountPrice) > 0 && (
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {calculateDiscount(product.mrp, product.discountPrice)}% OFF
-                  </div>
                 )}
-              </div>
-
-              {/* Product Info */}
-              <div className="p-6 sm:w-2/3 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-semibold text-[#39b54b] bg-[#39b54b]/10 px-2 py-1 rounded-full">
-                      {product.category}
-                    </span>
-                    <span className={`text-sm font-medium ${
-                      product.inStock ? "text-green-600" : "text-red-600"
-                    }`}>
-                      {product.inStock ? "In Stock" : "Out of Stock"}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold mb-2 text-gray-800">
-                    {product.name}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {product.description}
-                  </p>
-
-                  {/* Rating */}
-                  <div className="flex items-center mb-4">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600 ml-2">({product.reviews} reviews)</span>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center">
-                  <div>
-                    <span className="block text-gray-400 line-through text-sm">
-                      ₹{product.mrp.toFixed(2)}
-                    </span>
-                    <span className="text-2xl font-bold text-gray-900">
-                      ₹{product.discountPrice.toFixed(2)}
-                    </span>
-                  </div>
-                  <button 
-                    onClick={() => openProductModal(product)}
-                    className="px-6 py-3 text-white bg-gradient-to-r from-[#39b54b] to-[#2da03e] hover:from-[#2da03e] hover:to-[#259038] rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
-                  >
-                    <Eye className="w-4 h-4" />
-                    <span>View Details</span>
-                  </button>
-                </div>
-              </div>
+              </button>
             </div>
-          ))}
+          </div>
         </div>
-      )}
+      </header>
 
-      {/* Animated Product Detail Modal */}
-      {showModal && selectedProduct && (
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        {currentPage === "products" && (
+          <ProductsPage
+            products={products}
+            addToCart={addToCart}
+            openProductModal={openProductModal}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+          />
+        )}
+
+        {currentPage === "cart" && (
+          <CartPage
+            cart={cart}
+            updateCartQuantity={updateCartQuantity}
+            removeFromCart={removeFromCart}
+            getCartTotal={getCartTotal}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
+
+        {currentPage === "checkout" && (
+          <CheckoutPage
+            cart={cart}
+            customerInfo={customerInfo}
+            handleCustomerInfoChange={handleCustomerInfoChange}
+            getCartTotal={getCartTotal}
+            handleCheckout={handleCheckout}
+            setCurrentPage={setCurrentPage}
+            paymentMethod={paymentMethod}
+            setPaymentMethod={setPaymentMethod} // Add this prop
+          />
+        )}
+
+        {currentPage === "success" && (
+          <SuccessPage
+            cart={cart}
+            customerInfo={customerInfo}
+            getCartTotal={getCartTotal}
+            setCurrentPage={setCurrentPage}
+            paymentMethod={paymentMethod} // Add this prop
+          />
+        )}
+      </main>
+
+      {/* Product Detail Modal */}
+      {selectedProduct && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-slideUp">
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center rounded-t-3xl">
-              <h2 className="text-2xl font-bold text-gray-900">Product Details</h2>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Product Details
+              </h2>
               <button
                 onClick={closeProductModal}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -810,11 +856,18 @@ export default function ProductSection() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
+
                   {/* Discount Badge */}
-                  {calculateDiscount(selectedProduct.mrp, selectedProduct.discountPrice) > 0 && (
+                  {calculateDiscount(
+                    selectedProduct.mrp,
+                    selectedProduct.discountPrice
+                  ) > 0 && (
                     <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full font-bold">
-                      {calculateDiscount(selectedProduct.mrp, selectedProduct.discountPrice)}% OFF
+                      {calculateDiscount(
+                        selectedProduct.mrp,
+                        selectedProduct.discountPrice
+                      )}
+                      % OFF
                     </div>
                   )}
                 </div>
@@ -825,7 +878,9 @@ export default function ProductSection() {
                     <span className="text-sm font-semibold text-[#39b54b] bg-[#39b54b]/10 px-3 py-1 rounded-full">
                       {selectedProduct.category}
                     </span>
-                    <span className="text-sm text-gray-600 ml-3">Code: {selectedProduct.code}</span>
+                    <span className="text-sm text-gray-600 ml-3">
+                      Code: {selectedProduct.code}
+                    </span>
                   </div>
 
                   <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -836,14 +891,22 @@ export default function ProductSection() {
                   <div className="flex items-center mb-6">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-5 h-5 ${i < Math.floor(selectedProduct.rating ?? 0) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                        <Star
+                          key={i}
+                          className={`w-5 h-5 ${
+                            i < Math.floor(selectedProduct.rating ?? 0)
+                              ? "text-yellow-400 fill-current"
+                              : "text-gray-300"
+                          }`}
                         />
                       ))}
                     </div>
-                    <span className="text-lg font-semibold ml-2">{selectedProduct.rating}</span>
-                    <span className="text-gray-600 ml-2">({selectedProduct.reviews} reviews)</span>
+                    <span className="text-lg font-semibold ml-2">
+                      {selectedProduct.rating}
+                    </span>
+                    <span className="text-gray-600 ml-2">
+                      ({selectedProduct.reviews} reviews)
+                    </span>
                   </div>
 
                   {/* Price */}
@@ -857,16 +920,21 @@ export default function ProductSection() {
                       </span>
                     </div>
                     <p className="text-green-600 font-semibold mt-2">
-                      You save ₹{(selectedProduct.mrp - selectedProduct.discountPrice).toFixed(2)}
+                      You save ₹
+                      {(
+                        selectedProduct.mrp - selectedProduct.discountPrice
+                      ).toFixed(2)}
                     </p>
                   </div>
 
                   {/* Stock Status */}
-                  <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
-                    selectedProduct.inStock 
-                      ? "bg-green-100 text-green-800" 
-                      : "bg-red-100 text-red-800"
-                  }`}>
+                  <div
+                    className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
+                      selectedProduct.inStock
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
+                    }`}
+                  >
                     {selectedProduct.inStock ? "✓ In Stock" : "✗ Out of Stock"}
                   </div>
 
@@ -874,21 +942,31 @@ export default function ProductSection() {
                   <div className="bg-gradient-to-r from-[#39b54b]/10 to-[#2da03e]/10 rounded-2xl p-4 mb-6">
                     <div className="flex items-center space-x-2">
                       <Award className="w-5 h-5 text-[#39b54b]" />
-                      <span className="font-semibold text-gray-900">Business Value: ₹{selectedProduct.businessValue}</span>
+                      <span className="font-semibold text-gray-900">
+                        Business Value: ₹{selectedProduct.businessValue}
+                      </span>
                     </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <a href="https://pages.razorpay.com/stores/st_QD6JmHuMK8AMiy">
                   <div className="flex space-x-4 mb-8">
-                    
-                    <button className="flex-1 bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                    <button
+                      onClick={() => {
+                        if (selectedProduct.inStock) {
+                          addToCart(selectedProduct);
+                        }
+                      }}
+                      disabled={!selectedProduct.inStock}
+                      className={`flex-1 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2' ${
+                        selectedProduct.inStock
+                          ? "bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white hover:shadow-lg"
+                          : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      }`}
+                    >
                       <ShoppingCart className="w-5 h-5" />
-                      <span>Buy Now</span>
+                      <span>Add to Cart</span>
                     </button>
-                    
                   </div>
-                  </a>
                 </div>
               </div>
 
@@ -924,7 +1002,7 @@ export default function ProductSection() {
                       Usage Tips
                     </h3>
                     <p className="text-gray-700 leading-relaxed">
-                      {selectedProduct.useTips}
+                      {selectedProduct.usageTips}
                     </p>
                   </div>
                 </div>
@@ -933,58 +1011,8 @@ export default function ProductSection() {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(50px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-        
-        .animate-slideUp {
-          animation: slideUp 0.4s ease-out;
-        }
-        
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
     </div>
   );
-}
+};
 
+export default ProductGrid;

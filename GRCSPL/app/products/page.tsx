@@ -1,15 +1,12 @@
-"use client";
 import type { Metadata } from "next";
-import PageHeader from "@/components/ui-custom/page-header";
-import ProductFilter from "@/components/products/product-filter";
-import ProductGrid from "@/components/products/product-grid";
+import ProductGrid from "@/components/ProductGrid";
 import React, { useState, useEffect } from "react";
 import { Zap, TrendingUp, Gift, ChevronLeft, ChevronRight } from "lucide-react";
 
-// export const metadata: Metadata = {
-//   title: "Products | Business Opportunities in Tamil Nadu",
-//   description: "Browse our range of products available in Tamil Nadu",
-// }
+export const metadata: Metadata = {
+  title: "Products | Business Opportunities in Tamil Nadu",
+  description: "Browse our range of products available in Tamil Nadu",
+}
 
 const bannerSlides = [
   {
@@ -51,31 +48,31 @@ const bannerSlides = [
 ];
 
 export default function ProductsPage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  // const [currentSlide, setCurrentSlide] = useState(0);
+  // const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
+  // useEffect(() => {
+  //   if (!isAutoPlaying) return;
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
-    }, 2000);
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
+  //   }, 2000);
 
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  //   return () => clearInterval(interval);
+  // }, [isAutoPlaying]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + bannerSlides.length) % bannerSlides.length
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide(
+  //     (prev) => (prev - 1 + bannerSlides.length) % bannerSlides.length
+  //   );
+  // };
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Banner Slider */}
+    <div>
+      {/* Banner Slider
       <div
         className=" relative h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
         onMouseEnter={() => setIsAutoPlaying(false)}
@@ -94,14 +91,12 @@ export default function ProductsPage() {
               className={`pl-16 h-full bg-gradient-to-br ${slide.gradient} relative overflow-hidden`}
               style={{ background: slide.bgPattern }}
             >
-              {/* Animated Background Elements */}
               <div className="absolute inset-0">
                 <div className="absolute top-4 sm:top-6 md:top-10 right-4 sm:right-6 md:right-10 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white/10 rounded-full animate-pulse"></div>
                 <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 left-4 sm:left-6 md:left-10 w-12 h-12 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 rounded-full animate-bounce"></div>
                 <div className="absolute top-1/2 left-1/4 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/5 rounded-full animate-ping"></div>
               </div>
 
-              {/* Content */}
               <div className="relative z-10 h-full flex items-center">
                 <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
                   <div className="max-w-xl md:max-w-2xl">
@@ -131,7 +126,6 @@ export default function ProductsPage() {
           </div>
         ))}
 
-        {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
           className="absolute left-2 sm:left-3 md:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 md:p-3 bg-white/40 backdrop-blur-sm rounded-full text-black hover:bg-white/30 transition-all duration-300 hover:scale-110"
@@ -145,7 +139,7 @@ export default function ProductsPage() {
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         </button>
 
-        {/* Dots Indicator */}
+        
         <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
           {bannerSlides.map((_, index) => (
             <button
@@ -160,15 +154,9 @@ export default function ProductsPage() {
           ))}
         </div>
       </div>
+       */}
 
-      <div className="mt-8 flex flex-col md:flex-row gap-8">
-        {/* <div className="w-full md:w-1/4">
-          <ProductFilter />
-        </div> */}
-        <div className="w-full md:w-4/4">
-          <ProductGrid />
-        </div>
-      </div>
+     <ProductGrid />
     </div>
   );
 }
