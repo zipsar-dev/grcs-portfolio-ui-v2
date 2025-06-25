@@ -1,6 +1,21 @@
 "use client";
-import React, { useState,useEffect } from "react";
-import { Search, Grid, List, X, Star, ShoppingCart, Eye, Zap, Award, Users,TrendingUp,Gift,ChevronLeft,ChevronRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import {
+  Search,
+  Grid,
+  List,
+  X,
+  Star,
+  ShoppingCart,
+  Eye,
+  Zap,
+  Award,
+  Users,
+  TrendingUp,
+  Gift,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 interface ProductDetails {
   name: string;
@@ -19,7 +34,7 @@ const productsRaw = [
     HN1001: {
       name: "Fabricare Liquid Detergent 500ml",
       category: "HOME CARE",
-      src: "/product/home/1.png",
+      src: "/product/Home/1.png",
       code: "HN1001",
       mrp: 215.0,
       discountPrice: 195.0,
@@ -33,7 +48,7 @@ const productsRaw = [
     },
     HN1002: {
       name: "GR Sanitone Toilet Cleaner 500ml",
-      src: "/product/home/2.png",
+      src: "/product/Home/2.png",
       category: "HOME CARE",
       code: "HN1002",
       mrp: 155.0,
@@ -48,7 +63,7 @@ const productsRaw = [
     },
     HN1003: {
       name: "GR Fabricool After Wash 250ml",
-      src: "/product/home/3.png",
+      src: "/product/Home/3.png",
       category: "HOME CARE",
       code: "HN1003",
       mrp: 146.0,
@@ -63,7 +78,7 @@ const productsRaw = [
     },
     HN1004: {
       name: "Kitchen Scrub 3pcs (with SS Thread)",
-      src: "/product/home/4.png",
+      src: "/product/Home/4.png",
       category: "HOME CARE",
       code: "HN1004",
       mrp: 68.0,
@@ -78,7 +93,7 @@ const productsRaw = [
     },
     HN1005: {
       name: "Multipurpose Cleaning Scrubber 1pc",
-      src: "/product/home/5.png",
+      src: "/product/Home/5.png",
       category: "HOME CARE",
       code: "HN1005",
       mrp: 135.0,
@@ -94,7 +109,7 @@ const productsRaw = [
 
     HN1006: {
       name: "Multi-Purpose Stain Remover 200ml",
-      src: "/product/home/6.png",
+      src: "/product/Home/6.png",
       category: "HOME CARE",
       code: "HN1006",
       mrp: 180.0,
@@ -109,7 +124,7 @@ const productsRaw = [
     },
     HN1007: {
       name: "Bathroom Tile Cleaner 500ml",
-      src: "/product/home/7.png",
+      src: "/product/Home/7.png",
       category: "HOME CARE",
       code: "HN1007",
       mrp: 390.0,
@@ -124,7 +139,7 @@ const productsRaw = [
     },
     HN1008: {
       name: "Dish Wash Plus (Green) 500ml",
-      src: "/product/home/8.png",
+      src: "/product/Home/8.png",
       category: "HOME CARE",
       code: "HN1008",
       mrp: 220.0,
@@ -139,7 +154,7 @@ const productsRaw = [
     },
     HN1009: {
       name: "Florex Plus Cleaner 500ml",
-      src: "/product/home/9.png",
+      src: "/product/Home/9.png",
       category: "HOME CARE",
       code: "HN1009",
       mrp: 165.0,
@@ -154,7 +169,7 @@ const productsRaw = [
     },
     HN1010: {
       name: "Glass Cleaner 500ml",
-      src: "/product/home/10.png",
+      src: "/product/Home/10.png",
       category: "HOME CARE",
       code: "HN1010",
       mrp: 250.0,
@@ -169,7 +184,7 @@ const productsRaw = [
     },
     HC001: {
       name: "மோரிங்கோ கேப்ஸூல் | MORINGO CAPSULES 60tablets",
-      src: "/product/health/1.png",
+      src: "/product/Health/1.png",
       category: "HEALTH CARE",
       code: "HC001",
       mrp: 975.0,
@@ -184,7 +199,7 @@ const productsRaw = [
     },
     HC002: {
       name: "சந்தி வலி நிவாரண கேப்ஸூல் | JOINT PAIN RELIEVER CAPSULE 30tablets",
-      src: "/product/health/2.png",
+      src: "/product/Health/2.png",
       category: "HEALTH CARE",
       code: "HC002",
       mrp: 1140.0,
@@ -199,7 +214,7 @@ const productsRaw = [
     },
     HC003: {
       name: "ஸ்டாமினா பூஸ்டர் | GR NATURE CARE STAMINA BOOSTER 10tablets",
-      src: "/product/health/3.png",
+      src: "/product/Health/3.png",
       category: "HEALTH CARE",
       code: "HC003",
       mrp: 1190.0,
@@ -214,7 +229,7 @@ const productsRaw = [
     },
     HC004: {
       name: "ஆர்கானிக் மொரிங்கா டீ | GR NATURE FRESH ORGANIC MORINGA TEA 100gm",
-      src: "/product/health/4.png",
+      src: "/product/Health/4.png",
       category: "HEALTH CARE",
       code: "HC004",
       mrp: 399.0,
@@ -229,7 +244,7 @@ const productsRaw = [
     },
     HC005: {
       name: "வலி நிவாரண எண்ணெய் | GR Pain Relief Oil",
-      src: "/product/health/5.png",
+      src: "/product/Health/5.png",
       category: "HEALTH CARE",
       code: "HC005",
       mrp: 180.0,
@@ -244,7 +259,7 @@ const productsRaw = [
     },
     PC001: {
       name: "Natural Aloe Vera Gel 60gm",
-      src: "/product/personal/1.png",
+      src: "/product/Personal/1.png",
       category: "Personal CARE",
       code: "PC001",
       mrp: 99.0,
@@ -259,7 +274,7 @@ const productsRaw = [
     },
     PC002: {
       name: "ALOENOVA (Aloevera MILK SOAP) 80gm",
-      src: "/product/personal/2.png",
+      src: "/product/Personal/2.png",
       category: "Personal CARE",
       code: "PC002",
       mrp: 60.0,
@@ -274,7 +289,7 @@ const productsRaw = [
     },
     PC003: {
       name: "ALOENOVA (Lemon Grass Soap) 100gm",
-      src: "/product/personal/3.png",
+      src: "/product/Personal/3.png",
       category: "Personal CARE",
       code: "PC003",
       mrp: 60.0,
@@ -289,7 +304,7 @@ const productsRaw = [
     },
     PC004: {
       name: "GEEAAR RED ONION HAIR OIL 200ml",
-      src: "/product/personal/4.png",
+      src: "/product/Personal/4.png",
       category: "Personal CARE",
       code: "PC004",
       mrp: 210.0,
@@ -304,7 +319,7 @@ const productsRaw = [
     },
     PC005: {
       name: "GEEAAR BODY LOTION 200ML",
-      src: "/product/personal/5.png",
+      src: "/product/Personal/5.png",
       category: "Personal CARE",
       code: "PC005",
       mrp: 152.0,
@@ -319,7 +334,7 @@ const productsRaw = [
     },
     PC006: {
       name: "GEEAAR ANTI-DANDRUFF SHAMPOO 200ml",
-      src: "/product/personal/6.png",
+      src: "/product/Personal/6.png",
       category: "Personal CARE",
       code: "PC006",
       mrp: 195.0,
@@ -334,7 +349,7 @@ const productsRaw = [
     },
     PC007: {
       name: "GEEAAR HERBAL SHAMPOO 200ml",
-      src: "/product/personal/7.png",
+      src: "/product/Personal/7.png",
       category: "Personal CARE",
       code: "PC007",
       mrp: 185.0,
@@ -349,7 +364,7 @@ const productsRaw = [
     },
     PC008: {
       name: "GEEAAR BODY WASH 200ml",
-      src: "/product/personal/8.png",
+      src: "/product/Personal/8.png",
       category: "Personal CARE",
       code: "PC008",
       mrp: 175.0,
@@ -364,7 +379,7 @@ const productsRaw = [
     },
     PC009: {
       name: "FACE WASH CAKE 30gm",
-      src: "/product/personal/9.png",
+      src: "/product/Personal/9.png",
       category: "Personal CARE",
       code: "PC009",
       mrp: 110.0,
@@ -379,7 +394,7 @@ const productsRaw = [
     },
     AC001: {
       name: "PLASTIC RESTORER 200ml",
-      src: "/product/auto/1.png",
+      src: "/product/Auto/1.png",
       category: "AUTO CARE",
       code: "AC001",
       mrp: 450.0,
@@ -394,7 +409,7 @@ const productsRaw = [
     },
     AC002: {
       name: "CAR INTERIOR POLISH 200ml",
-      src: "/product/auto/2.png",
+      src: "/product/Auto/2.png",
       category: "AUTO CARE",
       code: "AC002",
       mrp: 250.0,
@@ -409,7 +424,7 @@ const productsRaw = [
     },
     AC003: {
       name: "CAR SCREEN WASH Liquid 200ml",
-      src: "/product/auto/3.png",
+      src: "/product/Auto/3.png",
       category: "AUTO CARE",
       code: "AC003",
       mrp: 250.0,
@@ -424,7 +439,7 @@ const productsRaw = [
     },
     AC004: {
       name: "CAR DASHBOARD Shine 100gm",
-      src: "/product/auto/4.png",
+      src: "/product/Auto/4.png",
       category: "AUTO CARE",
       code: "AC004",
       mrp: 285.0,
@@ -439,7 +454,7 @@ const productsRaw = [
     },
     AC005: {
       name: "CAR Ultra Foam SHAMPOO 200ml",
-      src: "/product/auto/5.png",
+      src: "/product/Auto/5.png",
       category: "AUTO CARE",
       code: "AC005",
       mrp: 145.0,
@@ -454,7 +469,7 @@ const productsRaw = [
     },
     AC006: {
       name: "G.COAT WINDSHIELD PROTECTOR 50ml",
-      src: "/product/auto/6.png",
+      src: "/product/Auto/6.png",
       category: "AUTO CARE",
       code: "AC006",
       mrp: 540.0,
@@ -469,7 +484,7 @@ const productsRaw = [
     },
     AC007: {
       name: "WATER SPOT REMOVER 200ml",
-      src: "/product/auto/7.png",
+      src: "/product/Auto/7.png",
       category: "AUTO CARE",
       code: "AC007",
       mrp: 520.0,
@@ -482,9 +497,8 @@ const productsRaw = [
       useTips:
         "Spray directly onto the affected area. Use a microfiber cloth to scrub gently and wipe away the residue for a clean look.",
     },
-  }
+  },
 ];
-
 
 const products = [
   ...Object.values(productsRaw[0]).map((p: any) => ({
@@ -494,7 +508,7 @@ const products = [
     reviews: p.reviews ?? 0,
     inStock: p.inStock ?? true,
   })),
-  ...productsRaw.slice(1)
+  ...productsRaw.slice(1),
 ];
 
 export default function ProductSection() {
@@ -503,10 +517,14 @@ export default function ProductSection() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showModal, setShowModal] = useState(false);
 
-  const filteredProducts = products.filter(product =>
-    typeof product.name === "string" && product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    typeof product.category === "string" && product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    typeof product.code === "string" && product.code.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredProducts = products.filter(
+    (product) =>
+      (typeof product.name === "string" &&
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (typeof product.category === "string" &&
+        product.category.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (typeof product.code === "string" &&
+        product.code.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   interface Product {
@@ -529,13 +547,13 @@ export default function ProductSection() {
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
     setShowModal(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeProductModal = () => {
     setShowModal(false);
     setSelectedProduct(null);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   interface CalculateDiscount {
@@ -548,7 +566,6 @@ export default function ProductSection() {
 
   return (
     <div className="p-4 md:p-6 relative">
-     
       {/* Search Bar & View Toggle */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <div className="relative w-full sm:w-80">
@@ -566,8 +583,8 @@ export default function ProductSection() {
           <span className="text-sm text-gray-600 font-medium px-2">View:</span>
           <button
             className={`p-2.5 rounded-xl transition-all duration-300 ${
-              viewMode === "grid" 
-                ? "bg-[#39b54b] text-white shadow-lg transform scale-105" 
+              viewMode === "grid"
+                ? "bg-[#39b54b] text-white shadow-lg transform scale-105"
                 : "text-gray-600 hover:bg-white hover:shadow-md"
             }`}
             onClick={() => setViewMode("grid")}
@@ -577,8 +594,8 @@ export default function ProductSection() {
           </button>
           <button
             className={`p-2.5 rounded-xl transition-all duration-300 ${
-              viewMode === "list" 
-                ? "bg-[#39b54b] text-white shadow-lg transform scale-105" 
+              viewMode === "list"
+                ? "bg-[#39b54b] text-white shadow-lg transform scale-105"
                 : "text-gray-600 hover:bg-white hover:shadow-md"
             }`}
             onClick={() => setViewMode("list")}
@@ -607,7 +624,7 @@ export default function ProductSection() {
               className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
               style={{
                 animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
+                animation: "fadeInUp 0.6s ease-out forwards",
               }}
             >
               {/* Product Image with Overlay */}
@@ -617,20 +634,25 @@ export default function ProductSection() {
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                
+
                 {/* Discount Badge */}
-                {typeof product.mrp === "number" && typeof product.discountPrice === "number" && calculateDiscount(product.mrp, product.discountPrice) > 0 && (
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {calculateDiscount(product.mrp, product.discountPrice)}% OFF
-                  </div>
-                )}
+                {typeof product.mrp === "number" &&
+                  typeof product.discountPrice === "number" &&
+                  calculateDiscount(product.mrp, product.discountPrice) > 0 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      {calculateDiscount(product.mrp, product.discountPrice)}%
+                      OFF
+                    </div>
+                  )}
 
                 {/* Stock Status */}
-                <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${
-                  product.inStock 
-                    ? "bg-green-100 text-green-800" 
-                    : "bg-red-100 text-red-800"
-                }`}>
+                <div
+                  className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${
+                    product.inStock
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
                   {product.inStock ? "In Stock" : "Out of Stock"}
                 </div>
 
@@ -653,11 +675,11 @@ export default function ProductSection() {
                     {product.category}
                   </span>
                 </div>
-                
+
                 <h3 className="text-lg font-bold mb-2 text-gray-800 line-clamp-2 group-hover:text-[#39b54b] transition-colors">
                   {product.name}
                 </h3>
-                
+
                 <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                   {product.description}
                 </p>
@@ -666,13 +688,19 @@ export default function ProductSection() {
                 <div className="flex items-center mb-4">
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < Math.floor(product.rating)
+                            ? "text-yellow-400 fill-current"
+                            : "text-gray-300"
+                        }`}
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600 ml-2">({product.reviews})</span>
+                  <span className="text-sm text-gray-600 ml-2">
+                    ({product.reviews})
+                  </span>
                 </div>
 
                 {/* Price and Action */}
@@ -685,7 +713,7 @@ export default function ProductSection() {
                       ₹{product.discountPrice.toFixed(2)}
                     </span>
                   </div>
-                  <button 
+                  <button
                     onClick={() => openProductModal(product)}
                     className="px-4 py-2 text-sm text-white bg-gradient-to-r from-[#39b54b] to-[#2da03e] hover:from-[#2da03e] hover:to-[#259038] rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
@@ -705,7 +733,7 @@ export default function ProductSection() {
               className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col sm:flex-row border border-gray-100"
               style={{
                 animationDelay: `${index * 100}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
+                animation: "fadeInUp 0.6s ease-out forwards",
               }}
             >
               {/* Image */}
@@ -715,7 +743,7 @@ export default function ProductSection() {
                   alt={product.name}
                   className="max-w-full max-h-48 object-contain"
                 />
-                
+
                 {/* Discount Badge */}
                 {calculateDiscount(product.mrp, product.discountPrice) > 0 && (
                   <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -731,17 +759,19 @@ export default function ProductSection() {
                     <span className="text-xs font-semibold text-[#39b54b] bg-[#39b54b]/10 px-2 py-1 rounded-full">
                       {product.category}
                     </span>
-                    <span className={`text-sm font-medium ${
-                      product.inStock ? "text-green-600" : "text-red-600"
-                    }`}>
+                    <span
+                      className={`text-sm font-medium ${
+                        product.inStock ? "text-green-600" : "text-red-600"
+                      }`}
+                    >
                       {product.inStock ? "In Stock" : "Out of Stock"}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold mb-2 text-gray-800">
                     {product.name}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-4 line-clamp-3">
                     {product.description}
                   </p>
@@ -750,13 +780,19 @@ export default function ProductSection() {
                   <div className="flex items-center mb-4">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < Math.floor(product.rating)
+                              ? "text-yellow-400 fill-current"
+                              : "text-gray-300"
+                          }`}
                         />
                       ))}
                     </div>
-                    <span className="text-sm text-gray-600 ml-2">({product.reviews} reviews)</span>
+                    <span className="text-sm text-gray-600 ml-2">
+                      ({product.reviews} reviews)
+                    </span>
                   </div>
                 </div>
 
@@ -769,7 +805,7 @@ export default function ProductSection() {
                       ₹{product.discountPrice.toFixed(2)}
                     </span>
                   </div>
-                  <button 
+                  <button
                     onClick={() => openProductModal(product)}
                     className="px-6 py-3 text-white bg-gradient-to-r from-[#39b54b] to-[#2da03e] hover:from-[#2da03e] hover:to-[#259038] rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
                   >
@@ -789,7 +825,9 @@ export default function ProductSection() {
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-slideUp">
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center rounded-t-3xl">
-              <h2 className="text-2xl font-bold text-gray-900">Product Details</h2>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Product Details
+              </h2>
               <button
                 onClick={closeProductModal}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -810,11 +848,18 @@ export default function ProductSection() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
+
                   {/* Discount Badge */}
-                  {calculateDiscount(selectedProduct.mrp, selectedProduct.discountPrice) > 0 && (
+                  {calculateDiscount(
+                    selectedProduct.mrp,
+                    selectedProduct.discountPrice
+                  ) > 0 && (
                     <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full font-bold">
-                      {calculateDiscount(selectedProduct.mrp, selectedProduct.discountPrice)}% OFF
+                      {calculateDiscount(
+                        selectedProduct.mrp,
+                        selectedProduct.discountPrice
+                      )}
+                      % OFF
                     </div>
                   )}
                 </div>
@@ -825,7 +870,9 @@ export default function ProductSection() {
                     <span className="text-sm font-semibold text-[#39b54b] bg-[#39b54b]/10 px-3 py-1 rounded-full">
                       {selectedProduct.category}
                     </span>
-                    <span className="text-sm text-gray-600 ml-3">Code: {selectedProduct.code}</span>
+                    <span className="text-sm text-gray-600 ml-3">
+                      Code: {selectedProduct.code}
+                    </span>
                   </div>
 
                   <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -836,14 +883,22 @@ export default function ProductSection() {
                   <div className="flex items-center mb-6">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-5 h-5 ${i < Math.floor(selectedProduct.rating ?? 0) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                        <Star
+                          key={i}
+                          className={`w-5 h-5 ${
+                            i < Math.floor(selectedProduct.rating ?? 0)
+                              ? "text-yellow-400 fill-current"
+                              : "text-gray-300"
+                          }`}
                         />
                       ))}
                     </div>
-                    <span className="text-lg font-semibold ml-2">{selectedProduct.rating}</span>
-                    <span className="text-gray-600 ml-2">({selectedProduct.reviews} reviews)</span>
+                    <span className="text-lg font-semibold ml-2">
+                      {selectedProduct.rating}
+                    </span>
+                    <span className="text-gray-600 ml-2">
+                      ({selectedProduct.reviews} reviews)
+                    </span>
                   </div>
 
                   {/* Price */}
@@ -857,16 +912,21 @@ export default function ProductSection() {
                       </span>
                     </div>
                     <p className="text-green-600 font-semibold mt-2">
-                      You save ₹{(selectedProduct.mrp - selectedProduct.discountPrice).toFixed(2)}
+                      You save ₹
+                      {(
+                        selectedProduct.mrp - selectedProduct.discountPrice
+                      ).toFixed(2)}
                     </p>
                   </div>
 
                   {/* Stock Status */}
-                  <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
-                    selectedProduct.inStock 
-                      ? "bg-green-100 text-green-800" 
-                      : "bg-red-100 text-red-800"
-                  }`}>
+                  <div
+                    className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
+                      selectedProduct.inStock
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
+                    }`}
+                  >
                     {selectedProduct.inStock ? "✓ In Stock" : "✗ Out of Stock"}
                   </div>
 
@@ -874,20 +934,20 @@ export default function ProductSection() {
                   <div className="bg-gradient-to-r from-[#39b54b]/10 to-[#2da03e]/10 rounded-2xl p-4 mb-6">
                     <div className="flex items-center space-x-2">
                       <Award className="w-5 h-5 text-[#39b54b]" />
-                      <span className="font-semibold text-gray-900">Business Value: ₹{selectedProduct.businessValue}</span>
+                      <span className="font-semibold text-gray-900">
+                        Business Value: ₹{selectedProduct.businessValue}
+                      </span>
                     </div>
                   </div>
 
                   {/* Action Buttons */}
                   <a href="https://pages.razorpay.com/stores/st_QD6JmHuMK8AMiy">
-                  <div className="flex space-x-4 mb-8">
-                    
-                    <button className="flex-1 bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
-                      <ShoppingCart className="w-5 h-5" />
-                      <span>Buy Now</span>
-                    </button>
-                    
-                  </div>
+                    <div className="flex space-x-4 mb-8">
+                      <button className="flex-1 bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                        <ShoppingCart className="w-5 h-5" />
+                        <span>Buy Now</span>
+                      </button>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -945,12 +1005,16 @@ export default function ProductSection() {
             transform: translateY(0);
           }
         }
-        
+
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
-        
+
         @keyframes slideUp {
           from {
             opacity: 0;
@@ -961,22 +1025,22 @@ export default function ProductSection() {
             transform: translateY(0) scale(1);
           }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }
-        
+
         .animate-slideUp {
           animation: slideUp 0.4s ease-out;
         }
-        
+
         .line-clamp-2 {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        
+
         .line-clamp-3 {
           display: -webkit-box;
           -webkit-line-clamp: 3;
@@ -987,4 +1051,3 @@ export default function ProductSection() {
     </div>
   );
 }
-

@@ -5,11 +5,16 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
-
+import { initMixpanel } from "@/lib/mixpanelClient";
 
 export default function Hero() {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    initMixpanel(); // Initialize Mixpanel
+  }, []);
+
   const images = [
     "/banner/1.jpg",
     "/banner/2.jpg",

@@ -9,7 +9,7 @@ import { Star, X, ShoppingCart, Award, Zap, Users } from "lucide-react";
 import OfferPopupCard from "@/components/Popup/sidepopup";
 
 // Define types based on your data
-interface Product {
+export interface Product {
   name: string;
   category: string;
   src: string;
@@ -19,6 +19,7 @@ interface Product {
   businessValue: number;
   description: string;
   benefit: string;
+  weight?: number;
   usageTips?: string;
   useTips?: string;
   inStock?: boolean;
@@ -26,12 +27,12 @@ interface Product {
   reviews?: number;
 }
 
-interface CartItem {
+export interface CartItem {
   product: Product;
   quantity: number;
 }
 
-interface CustomerInfo {
+export interface CustomerInfo {
   name: string;
   email: string;
   phone: string;
@@ -45,10 +46,11 @@ const productsRaw = [
     HN1001: {
       name: "Fabricare Liquid Detergent 500ml",
       category: "HOME CARE",
-      src: "/product/home/1.png",
+      src: "/product/Home/1.png",
       code: "HN1001",
       mrp: 215.0,
-      discountPrice: 195.0,
+      weight: 500,
+      discountPrice: 1.0,
       businessValue: 47,
       rating: 4.5,
       reviews: 128,
@@ -62,10 +64,11 @@ const productsRaw = [
     },
     HN1002: {
       name: "GR Sanitone Toilet Cleaner 500ml",
-      src: "/product/home/2.png",
+      src: "/product/Home/2.png",
       category: "HOME CARE",
       code: "HN1002",
       mrp: 155.0,
+      weight: 500,
       discountPrice: 145.0,
       businessValue: 352,
       rating: 4.5,
@@ -80,14 +83,15 @@ const productsRaw = [
     },
     HN1003: {
       name: "GR Fabricool After Wash 250ml",
-      src: "/product/home/3.png",
+      src: "/product/Home/3.png",
       category: "HOME CARE",
       code: "HN1003",
       mrp: 146.0,
+      weight: 250,
       discountPrice: 126.0,
       businessValue: 30,
       rating: 3.5,
-      reviews:8,
+      reviews: 8,
       inStock: true,
       description:
         "A premium after-wash fabric conditioner that adds softness and freshness to your clothes.",
@@ -98,10 +102,11 @@ const productsRaw = [
     },
     HN1004: {
       name: "Kitchen Scrub 3pcs (with SS Thread)",
-      src: "/product/home/4.png",
+      src: "/product/Home/4.png",
       category: "HOME CARE",
       code: "HN1004",
       mrp: 68.0,
+      weight: 500,
       discountPrice: 64.0,
       businessValue: 15,
       rating: 4.3,
@@ -116,10 +121,11 @@ const productsRaw = [
     },
     HN1005: {
       name: "Multipurpose Cleaning Scrubber 1pc",
-      src: "/product/home/5.png",
+      src: "/product/Home/5.png",
       category: "HOME CARE",
       code: "HN1005",
       mrp: 135.0,
+      weight: 500,
       discountPrice: 90.0,
       businessValue: 22,
       rating: 4.2,
@@ -135,9 +141,10 @@ const productsRaw = [
 
     HN1006: {
       name: "Multi-Purpose Stain Remover 200ml",
-      src: "/product/home/6.png",
+      src: "/product/Home/6.png",
       category: "HOME CARE",
       code: "HN1006",
+      weight: 200,
       mrp: 180.0,
       discountPrice: 150.0,
       businessValue: 37,
@@ -153,14 +160,15 @@ const productsRaw = [
     },
     HN1007: {
       name: "Bathroom Tile Cleaner 500ml",
-      src: "/product/home/7.png",
+      src: "/product/Home/7.png",
       category: "HOME CARE",
       code: "HN1007",
       mrp: 390.0,
+      weight: 500,
       discountPrice: 360.0,
       businessValue: 86,
       rating: 4.3,
-      reviews:82,
+      reviews: 82,
       inStock: true,
       description:
         "A specialized cleaner for bathroom tiles that removes dirt, grime, and watermarks, leaving surfaces sparkling clean.",
@@ -171,10 +179,11 @@ const productsRaw = [
     },
     HN1008: {
       name: "Dish Wash Plus (Green) 500ml",
-      src: "/product/home/8.png",
+      src: "/product/Home/8.png",
       category: "HOME CARE",
       code: "HN1008",
       mrp: 220.0,
+      weight: 500,
       discountPrice: 190.0,
       businessValue: 48,
       rating: 4.8,
@@ -189,10 +198,11 @@ const productsRaw = [
     },
     HN1009: {
       name: "Florex Plus Cleaner 500ml",
-      src: "/product/home/9.png",
+      src: "/product/Home/9.png",
       category: "HOME CARE",
       code: "HN1009",
       mrp: 165.0,
+      weight: 500,
       discountPrice: 154.0,
       businessValue: 37,
       rating: 4.0,
@@ -207,14 +217,15 @@ const productsRaw = [
     },
     HN1010: {
       name: "Glass Cleaner 500ml",
-      src: "/product/home/10.png",
+      src: "/product/Home/10.png",
       category: "HOME CARE",
       code: "HN1010",
       mrp: 250.0,
+      weight: 500,
       discountPrice: 230.0,
       businessValue: 55,
       rating: 4.5,
-      reviews:58,
+      reviews: 58,
       inStock: true,
       description:
         "A streak-free glass cleaner that ensures crystal-clear surfaces with minimal effort.",
@@ -225,10 +236,11 @@ const productsRaw = [
     },
     HC001: {
       name: "மோரிங்கோ கேப்ஸூல் | MORINGO CAPSULES 60tablets",
-      src: "/product/health/1.png",
+      src: "/product/Health/1.png",
       category: "HEALTH CARE",
       code: "HC001",
       mrp: 975.0,
+      weight: 500,
       discountPrice: 780.0,
       businessValue: 187,
       rating: 4.5,
@@ -243,10 +255,11 @@ const productsRaw = [
     },
     HC002: {
       name: "சந்தி வலி நிவாரண கேப்ஸூல் | JOINT PAIN RELIEVER CAPSULE 30tablets",
-      src: "/product/health/2.png",
+      src: "/product/Health/2.png",
       category: "HEALTH CARE",
       code: "HC002",
       mrp: 1140.0,
+      weight: 500,
       discountPrice: 950.0,
       businessValue: 227,
       rating: 5.0,
@@ -261,10 +274,11 @@ const productsRaw = [
     },
     HC003: {
       name: "ஸ்டாமினா பூஸ்டர் | GR NATURE CARE STAMINA BOOSTER 10tablets",
-      src: "/product/health/3.png",
+      src: "/product/Health/3.png",
       category: "HEALTH CARE",
       code: "HC003",
       mrp: 1190.0,
+      weight: 500,
       discountPrice: 930.0,
       businessValue: 223,
       rating: 4.5,
@@ -279,10 +293,11 @@ const productsRaw = [
     },
     HC004: {
       name: "ஆர்கானிக் மொரிங்கா டீ | GR NATURE FRESH ORGANIC MORINGA TEA 100gm",
-      src: "/product/health/4.png",
+      src: "/product/Health/4.png",
       category: "HEALTH CARE",
       code: "HC004",
       mrp: 399.0,
+      weight: 500,
       discountPrice: 370.0,
       businessValue: 89,
       rating: 4.3,
@@ -297,10 +312,11 @@ const productsRaw = [
     },
     HC005: {
       name: "வலி நிவாரண எண்ணெய் | GR Pain Relief Oil",
-      src: "/product/health/5.png",
+      src: "/product/Health/5.png",
       category: "HEALTH CARE",
       code: "HC005",
       mrp: 180.0,
+      weight: 500,
       discountPrice: 150.0,
       businessValue: 37,
       rating: 4.9,
@@ -315,10 +331,11 @@ const productsRaw = [
     },
     PC001: {
       name: "Natural Aloe Vera Gel 60gm",
-      src: "/product/personal/1.png",
+      src: "/product/Personal/1.png",
       category: "Personal CARE",
       code: "PC001",
       mrp: 99.0,
+      weight: 500,
       discountPrice: 99.0,
       businessValue: 24,
       rating: 4.2,
@@ -333,10 +350,11 @@ const productsRaw = [
     },
     PC002: {
       name: "ALOENOVA (Aloevera MILK SOAP) 80gm",
-      src: "/product/personal/2.png",
+      src: "/product/Personal/2.png",
       category: "Personal CARE",
       code: "PC002",
       mrp: 60.0,
+      weight: 100,
       discountPrice: 55.0,
       businessValue: 13,
       rating: 4.5,
@@ -351,10 +369,11 @@ const productsRaw = [
     },
     PC003: {
       name: "ALOENOVA (Lemon Grass Soap) 100gm",
-      src: "/product/personal/3.png",
+      src: "/product/Personal/3.png",
       category: "Personal CARE",
       code: "PC003",
       mrp: 60.0,
+      weight: 100,
       discountPrice: 55.0,
       businessValue: 13,
       rating: 3.8,
@@ -369,10 +388,11 @@ const productsRaw = [
     },
     PC004: {
       name: "GEEAAR RED ONION HAIR OIL 200ml",
-      src: "/product/personal/4.png",
+      src: "/product/Personal/4.png",
       category: "Personal CARE",
       code: "PC004",
       mrp: 210.0,
+      weight: 200,
       discountPrice: 175.0,
       businessValue: 41,
       rating: 4.7,
@@ -387,14 +407,15 @@ const productsRaw = [
     },
     PC005: {
       name: "GEEAAR BODY LOTION 200ML",
-      src: "/product/personal/5.png",
+      src: "/product/Personal/5.png",
       category: "Personal CARE",
       code: "PC005",
       mrp: 152.0,
+      weight: 200,
       discountPrice: 142.0,
       businessValue: 34,
       rating: 4.1,
-      reviews:28,
+      reviews: 28,
       inStock: true,
       description:
         "A nourishing body lotion formulated to provide long-lasting hydration and softness to your skin.",
@@ -405,10 +426,11 @@ const productsRaw = [
     },
     PC006: {
       name: "GEEAAR ANTI-DANDRUFF SHAMPOO 200ml",
-      src: "/product/personal/6.png",
+      src: "/product/Personal/6.png",
       category: "Personal CARE",
       code: "PC006",
       mrp: 195.0,
+      weight: 200,
       discountPrice: 170.0,
       businessValue: 41,
       rating: 4.5,
@@ -423,10 +445,11 @@ const productsRaw = [
     },
     PC007: {
       name: "GEEAAR HERBAL SHAMPOO 200ml",
-      src: "/product/personal/7.png",
+      src: "/product/Personal/7.png",
       category: "Personal CARE",
       code: "PC007",
       mrp: 185.0,
+      weight: 500,
       discountPrice: 165.0,
       businessValue: 40,
       rating: 4.3,
@@ -441,10 +464,11 @@ const productsRaw = [
     },
     PC008: {
       name: "GEEAAR BODY WASH 200ml",
-      src: "/product/personal/8.png",
+      src: "/product/Personal/8.png",
       category: "Personal CARE",
       code: "PC008",
       mrp: 175.0,
+      weight: 200,
       discountPrice: 160.0,
       businessValue: 38,
       rating: 4.8,
@@ -459,10 +483,11 @@ const productsRaw = [
     },
     PC009: {
       name: "FACE WASH CAKE 30gm",
-      src: "/product/personal/9.png",
+      src: "/product/Personal/9.png",
       category: "Personal CARE",
       code: "PC009",
       mrp: 110.0,
+      weight: 30,
       discountPrice: 99.0,
       businessValue: 24,
       rating: 4.8,
@@ -477,10 +502,11 @@ const productsRaw = [
     },
     AC001: {
       name: "PLASTIC RESTORER 200ml",
-      src: "/product/auto/1.png",
+      src: "/product/Auto/1.png",
       category: "AUTO CARE",
       code: "AC001",
       mrp: 450.0,
+      weight: 200,
       discountPrice: 405.0,
       businessValue: 97,
       rating: 4.5,
@@ -495,10 +521,11 @@ const productsRaw = [
     },
     AC002: {
       name: "CAR INTERIOR POLISH 200ml",
-      src: "/product/auto/2.png",
+      src: "/product/Auto/2.png",
       category: "AUTO CARE",
       code: "AC002",
       mrp: 250.0,
+      weight: 200,
       discountPrice: 210.0,
       businessValue: 50,
       rating: 3.5,
@@ -513,10 +540,11 @@ const productsRaw = [
     },
     AC003: {
       name: "CAR SCREEN WASH Liquid 200ml",
-      src: "/product/auto/3.png",
+      src: "/product/Auto/3.png",
       category: "AUTO CARE",
       code: "AC003",
       mrp: 250.0,
+      weight: 200,
       discountPrice: 210.0,
       businessValue: 50,
       rating: 4.7,
@@ -531,10 +559,11 @@ const productsRaw = [
     },
     AC004: {
       name: "CAR DASHBOARD Shine 100gm",
-      src: "/product/auto/4.png",
+      src: "/product/Auto/4.png",
       category: "AUTO CARE",
       code: "AC004",
       mrp: 285.0,
+      weight: 200,
       discountPrice: 240.0,
       businessValue: 58,
       rating: 4.6,
@@ -549,10 +578,11 @@ const productsRaw = [
     },
     AC005: {
       name: "CAR Ultra Foam SHAMPOO 200ml",
-      src: "/product/auto/5.png",
+      src: "/product/Auto/5.png",
       category: "AUTO CARE",
       code: "AC005",
       mrp: 145.0,
+      weight: 200,
       discountPrice: 120.0,
       businessValue: 29,
       rating: 4.2,
@@ -567,10 +597,11 @@ const productsRaw = [
     },
     AC006: {
       name: "G.COAT WINDSHIELD PROTECTOR 50ml",
-      src: "/product/auto/6.png",
+      src: "/product/Auto/6.png",
       category: "AUTO CARE",
       code: "AC006",
       mrp: 540.0,
+      weight: 200,
       discountPrice: 450.0,
       businessValue: 105,
       rating: 5.0,
@@ -585,10 +616,11 @@ const productsRaw = [
     },
     AC007: {
       name: "WATER SPOT REMOVER 200ml",
-      src: "/product/auto/7.png",
+      src: "/product/Auto/7.png",
       category: "AUTO CARE",
       code: "AC007",
       mrp: 520.0,
+      weight: 200,
       discountPrice: 480.0,
       businessValue: 115,
       rating: 5.0,
@@ -603,6 +635,23 @@ const productsRaw = [
     },
   },
 ];
+
+// Calculate transport charges based on weight
+const calculateTransportCharges = (totalWeight: number): number => {
+  if (totalWeight <= 500) {
+    return 40; // ₹40 for <= 500g
+  } else if (totalWeight <= 1000) {
+    return 60; // ₹60 for <= 1000g (1kg)
+  } else if (totalWeight <= 2000) {
+    return 80; // ₹80 for <= 2000g (2kg)
+  } else if (totalWeight <= 5000) {
+    return 120; // ₹120 for <= 5000g (5kg)
+  } else {
+    // For > 5kg, ₹120 + ₹20 for each additional kg
+    const additionalKg = Math.ceil((totalWeight - 5000) / 1000);
+    return 120 + additionalKg * 20;
+  }
+};
 
 const ProductGrid = () => {
   const [currentPage, setCurrentPage] = useState<string>("products");
@@ -621,6 +670,9 @@ const ProductGrid = () => {
   });
   // Add paymentMethod to the state
   const [paymentMethod, setPaymentMethod] = useState<string>("");
+  // Add transactionId state
+  const [transactionId, setTransactionId] = useState<string>("");
+  const [transportCharge, setTransportCharge] = useState(0);
 
   // Add to cart
   const addToCart = (product: Product) => {
@@ -673,6 +725,24 @@ const ProductGrid = () => {
       (total, item) => total + item.product.discountPrice * item.quantity,
       0
     );
+  };
+
+  // Get total weight
+  const getTotalWeight = () => {
+    return cart.reduce(
+      (total, item) => total + (item.product.weight || 0) * item.quantity,
+      0
+    );
+  };
+
+  // Calculate transport charges
+  const getTransportCharges = () => {
+    return calculateTransportCharges(getTotalWeight());
+  };
+
+  // Get final total with transport charges
+  const getFinalTotal = () => {
+    return getCartTotal() + getTransportCharges();
   };
 
   // Handle customer info change
@@ -750,13 +820,13 @@ const ProductGrid = () => {
               )}
             </div>
             <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setCurrentPage("cart")}
-                className="relative p-2 text-gray-600 hover:text-[#39b54b] transition-colors"
+              <a
+                href="/checkorder"
+                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#39b54b] to-[#2da03e] text-white font-medium rounded-lg hover:shadow-lg hover:from-[#2da03e] hover:to-[#1e7d2e] transition-all duration-300 transform hover:scale-105"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-4 w-4 mr-2"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -765,15 +835,38 @@ const ProductGrid = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   />
                 </svg>
-                {cart.length > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                    {cart.reduce((acc, item) => acc + item.quantity, 0)}
-                  </span>
-                )}
-              </button>
+                Check Orders
+              </a>
+              {currentPage === "products" && (
+                <button
+                  onClick={() => setCurrentPage("cart")}
+                  className="relative p-2 text-gray-600 hover:text-[#39b54b] transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                    />
+                  </svg>
+
+                  {cart.length > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {cart.reduce((acc, item) => acc + item.quantity, 0)}
+                    </span>
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -802,7 +895,6 @@ const ProductGrid = () => {
             setCurrentPage={setCurrentPage}
           />
         )}
-
         {currentPage === "checkout" && (
           <CheckoutPage
             cart={cart}
@@ -812,17 +904,20 @@ const ProductGrid = () => {
             handleCheckout={handleCheckout}
             setCurrentPage={setCurrentPage}
             paymentMethod={paymentMethod}
-            setPaymentMethod={setPaymentMethod} // Add this prop
+            setPaymentMethod={setPaymentMethod}
+            setTransactionId={setTransactionId}
+            setTransportCharges={setTransportCharge}
           />
         )}
-
         {currentPage === "success" && (
           <SuccessPage
             cart={cart}
             customerInfo={customerInfo}
+            paymentMethod={paymentMethod}
+            transactionId={transactionId}
             getCartTotal={getCartTotal}
             setCurrentPage={setCurrentPage}
-            paymentMethod={paymentMethod} // Add this prop
+            transportCharge={transportCharge}
           />
         )}
       </main>

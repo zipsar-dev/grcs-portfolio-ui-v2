@@ -5,6 +5,7 @@ import {
   Minus,
   Plus,
   Trash2,
+  Package,
 } from "lucide-react";
 
 interface CartItem {
@@ -30,6 +31,14 @@ const CartPage: React.FC<CartPageProps> = ({
   getCartTotal,
   setCurrentPage,
 }) => {
+  // Calculate total weight
+  const getTotalWeight = () => {
+    return cart.reduce(
+      (total, item) => total + (item.product.weight || 0) * item.quantity,
+      0
+    );
+  };
+
   return (
     <div className="p-4 md:p-6">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
@@ -73,7 +82,7 @@ const CartPage: React.FC<CartPageProps> = ({
                     <p className="text-sm text-gray-600 mb-2">
                       {item.product.category}
                     </p>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4">
                       <span className="text-gray-400 line-through text-sm">
                         ₹{item.product.mrp}
                       </span>
@@ -81,6 +90,11 @@ const CartPage: React.FC<CartPageProps> = ({
                         ₹{item.product.discountPrice}
                       </span>
                     </div>
+                    {/* Add weight information */}
+                    {/* <div className="flex items-center mt-1 text-sm text-gray-600">
+                      <Package className="w-4 h-4 mr-1" /> 
+                      Weight: {item.product.weight || 0}g × {item.quantity} = {(item.product.weight || 0) * item.quantity}g
+                    </div> */}
                   </div>
                   {/* Quantity Controls */}
                   <div className="flex items-center space-x-3">
@@ -141,12 +155,32 @@ const CartPage: React.FC<CartPageProps> = ({
                 </div>
               ))}
             </div>
+            <div className="border-t border-gray-200 pt-4 mb-4">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-gray-600">Subtotal</span>
+                <span className="font-semibold">
+                  ₹{getCartTotal().toFixed(2)}
+                </span>
+              </div>
+              {/* <div className="flex justify-between items-center mb-2">
+                <div className="flex items-center">
+                  <Package className="w-4 h-4 mr-2 text-gray-600" />
+                  <span className="text-gray-600">Total Weight</span>
+                </div>
+                <span className="font-semibold">
+                  {getTotalWeight()}g
+                </span>
+              </div> */}
+            </div>
             <div className="border-t border-gray-200 pt-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-bold text-gray-900">Total</span>
                 <span className="text-2xl font-bold text-[#39b54b]">
                   ₹{getCartTotal().toFixed(2)}
                 </span>
+              </div>
+              <div className="text-xs text-gray-500 mt-1">
+                (Transport charges will be calculated at checkout)
               </div>
             </div>
             <button

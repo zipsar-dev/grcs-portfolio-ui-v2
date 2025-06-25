@@ -48,15 +48,15 @@ export default function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    const checkDevTools = () => {
-      if (devtools.isOpen) {
-        window.close(); // or redirect or blank out screen
-      }
-    };
-    const interval = setInterval(checkDevTools, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const checkDevTools = () => {
+  //     if (devtools.isOpen) {
+  //       window.close(); // or redirect or blank out screen
+  //     }
+  //   };
+  //   const interval = setInterval(checkDevTools, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <header className="bg-white shadow-sm">

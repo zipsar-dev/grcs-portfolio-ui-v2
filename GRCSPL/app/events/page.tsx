@@ -10,15 +10,9 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto">
       {/* <PageHeader title="Events Calendar" description="Stay updated with our events across Tamil Nadu" /> */}
-
-      <div className="mt-8">
-        <div className="mt-6">
-          {/* <EventCalendar /> */}
           <NoEventPage />
-        </div>
-      </div>
     </div>
   )
 }

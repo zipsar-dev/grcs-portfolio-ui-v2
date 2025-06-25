@@ -70,7 +70,7 @@ export default function RegistrationGuide() {
       </div>
 
       <div className="mt-12 text-center">
-        <Link href="/contact">
+        <Link href="/register">
           <Button className="bg-[#39b54b] hover:bg-[#2da03e] text-white px-8 py-3 text-lg">Register Now</Button>
         </Link>
       </div>
