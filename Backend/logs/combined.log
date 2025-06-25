@@ -1,0 +1,450 @@
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-17T16:14:58.037Z"}
+{"level":"warn","message":"MongoDB disconnected","service":"order-management-backend","timestamp":"2025-06-17T16:15:27.359Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:39:03.872Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:39:03.908Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:46:22.493Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:46:22.509Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:46:34.099Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:46:34.112Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:54:18.595Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:54:18.609Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:54:25.312Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:54:25.327Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:54:29.045Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:54:29.059Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:54:33.420Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:54:33.438Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:57:15.528Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:57:15.544Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:57:24.886Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:57:24.903Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:57:28.568Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:57:28.584Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:57:35.572Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:57:35.585Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:57:38.986Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:57:39.002Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T16:57:51.069Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T16:57:51.084Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:04:52.017Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:04:52.029Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:05:38.678Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:05:38.690Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:05:41.745Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:05:41.758Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:05:46.655Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:05:46.672Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:08:47.614Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:08:47.630Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:08:50.668Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:08:50.683Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:08:52.102Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:08:52.119Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:09:02.661Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:09:02.675Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:09:15.327Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:09:15.342Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:09:16.868Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:09:16.885Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:09:18.352Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:09:18.368Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:09:22.320Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:09:22.337Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:09:52.197Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:09:52.215Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:14:14.267Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:14:14.286Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:14:18.372Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:14:18.389Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:15:36.499Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:15:36.517Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:17:02.223Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:17:02.235Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:18:55.836Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:18:55.853Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:00.816Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:00.829Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:04.890Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:04.907Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:05.999Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:06.017Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:08.007Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:08.020Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:12.217Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:12.233Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:14.070Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:14.086Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:29.561Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:29.577Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:37.350Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:37.366Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:19:49.971Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:19:49.984Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:20:09.076Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:20:09.092Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:20:12.635Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:20:12.651Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:33:25.554Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:33:25.571Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:34:15.713Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:34:15.726Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:34:17.067Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:34:17.084Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:35:11.321Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:35:11.339Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:35:12.924Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:35:12.937Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:39:45.876Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:39:45.892Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:41:02.854Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:41:02.871Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:41:07.235Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:41:07.253Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:41:50.453Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:41:50.467Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:41:55.861Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:41:55.874Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:42:04.902Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:42:04.919Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:42:09.947Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:42:09.963Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:42:18.220Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:42:18.233Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:42:23.848Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:42:23.865Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:42:28.163Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:42:28.175Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:43:02.041Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:43:02.057Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:43:26.114Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:43:26.130Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:44:48.582Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:44:48.598Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:44:49.497Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:44:49.514Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:48:16.991Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:48:17.003Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:48:19.745Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:48:19.758Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:49:50.808Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:49:50.823Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:50:56.196Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:50:56.213Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:51:18.310Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:51:18.325Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:52:38.508Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:52:38.521Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:55:26.499Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:55:26.516Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:56:42.578Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:56:42.591Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:57:31.566Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:57:31.581Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:59:09.913Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:59:09.929Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:59:27.203Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:59:27.219Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T17:59:45.961Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T17:59:45.977Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:00:33.773Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:00:33.789Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:04:39.646Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:04:39.660Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:04:44.833Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:04:44.845Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:04:47.394Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:04:47.410Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:05:25.479Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:05:25.495Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:10:52.794Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:10:52.808Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:10:55.592Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:10:55.608Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:10:58.905Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:10:58.921Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:13:16.431Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:13:16.448Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:13:23.167Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:13:23.180Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:13:24.199Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:13:24.211Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:14:49.835Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:14:49.848Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:17:10.488Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:17:10.500Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:18:15.130Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:18:15.143Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:18:17.768Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:18:17.781Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:18:20.149Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:18:20.166Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:85:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-17T18:20:50.362Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:22:18.183Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:22:18.195Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:85:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-17T18:22:35.703Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:22:50.177Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:22:50.189Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:23:14.128Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:23:14.146Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:23:25.878Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:23:25.894Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:23:29.861Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:23:29.877Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:87:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-17T18:23:44.236Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-17T18:27:49.384Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-17T18:27:49.401Z"}
+{"level":"error","message":"Error: Failed to verify OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:142:17\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-17T18:27:54.847Z"}
+{"level":"error","message":"Error: Failed to verify OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:142:17\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-17T18:28:22.832Z"}
+{"level":"error","message":"Error: Failed to verify OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:142:17\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-17T18:28:35.071Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:41:31.295Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:41:31.309Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:42:17.345Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:42:17.362Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:42:32.902Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:42:32.919Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:42:34.508Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:42:34.526Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:42:40.043Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:42:40.059Z"}
+{"level":"error","message":"Error: Failed to verify OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:140:17\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:43:17.996Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:43:39.153Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:43:39.169Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:43:44.420Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:43:44.437Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at exports.createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:99:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:43:46.138Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:44:14.217Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:44:14.239Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:44:16.881Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:44:16.893Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:44:39.259Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:44:39.276Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:45:51.794Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:45:51.807Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at createError (file:///C:/Users/agsab/Downloads/Backend/utils/error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:95:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:45:57.256Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at createError (file:///C:/Users/agsab/Downloads/Backend/utils/error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:95:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:47:27.458Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:47:55.572Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:47:55.589Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:48:44.344Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:48:44.363Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:50:11.178Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:50:11.194Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at createError (file:///C:/Users/agsab/Downloads/Backend/utils/error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:92:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:50:27.979Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:54:24.268Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:54:24.285Z"}
+{"level":"error","message":"Error: Invalid or expired OTP\n    at createError (file:///C:/Users/agsab/Downloads/Backend/utils/error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:100:19\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:55:00.919Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:56:54.970Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:56:54.984Z"}
+{"level":"error","message":"Error: OTP not found. Please request a new one.\n    at createError (file:///C:/Users/agsab/Downloads/Backend/utils/error.js:8:19)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:85:34\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:57:05.190Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:57:54.303Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:57:54.326Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T05:59:28.747Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T05:59:28.763Z"}
+{"level":"error","message":"Error: OTP not found. Please request a new one.\n    at createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:2:15)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:85:34\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T05:59:59.922Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T06:02:48.214Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T06:02:48.230Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T06:02:54.115Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T06:02:54.131Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T06:03:28.706Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T06:03:28.727Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T06:03:29.912Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T06:03:29.926Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T06:03:39.774Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T06:03:39.792Z"}
+{"level":"info","message":"Notification user registered: +919566372450","service":"order-management-backend","timestamp":"2025-06-18T08:24:31.166Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T08:53:51.973Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T08:53:51.997Z"}
+{"level":"info","message":"Notification user registered: +919566372450","service":"order-management-backend","timestamp":"2025-06-18T10:42:10.106Z"}
+{"level":"info","message":"Notification user registered: +919566372450","service":"order-management-backend","timestamp":"2025-06-18T10:54:24.253Z"}
+{"level":"info","message":"Notification user registered: 9787666949","service":"order-management-backend","timestamp":"2025-06-18T10:56:25.955Z"}
+{"level":"info","message":"Notification user registered: 9787666949","service":"order-management-backend","timestamp":"2025-06-18T10:59:04.098Z"}
+{"level":"info","message":"Notification user registered: 9787666949","service":"order-management-backend","timestamp":"2025-06-18T11:01:23.601Z"}
+{"level":"info","message":"Notification user registered: 09566372450","service":"order-management-backend","timestamp":"2025-06-18T11:04:57.979Z"}
+{"level":"info","message":"Notification user registered: 1234569877","service":"order-management-backend","timestamp":"2025-06-18T11:05:48.988Z"}
+{"level":"error","message":"Error: Incorrect OTP. Please try again.\n    at createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:2:15)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:87:45\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T11:21:47.120Z"}
+{"level":"error","message":"Error: OTP not found. Please request a new one.\n    at createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:2:15)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:85:34\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T11:53:47.027Z"}
+{"level":"error","message":"Error: OTP not found. Please request a new one.\n    at createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:2:15)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:85:34\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T11:53:54.262Z"}
+{"level":"error","message":"Error: Incorrect OTP. Please try again.\n    at createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:2:15)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:87:45\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T11:54:49.378Z"}
+{"level":"error","message":"Error: Incorrect OTP. Please try again.\n    at createError (C:\\Users\\agsab\\Downloads\\Backend\\utils\\error.js:2:15)\n    at C:\\Users\\agsab\\Downloads\\Backend\\routes\\otp.js:87:45\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\agsab\\Downloads\\Backend\\node_modules\\express\\lib\\router\\index.js:175:3)","service":"order-management-backend","timestamp":"2025-06-18T12:36:51.046Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T12:47:33.580Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T12:47:33.608Z"}
+{"level":"info","message":"User registered: abhishek@example.com","service":"order-management-backend","timestamp":"2025-06-18T12:48:39.326Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T12:50:31.000Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T12:50:31.014Z"}
+{"level":"info","message":"User registered: abhishek1@example.com","service":"order-management-backend","timestamp":"2025-06-18T12:51:14.860Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:26:02.762Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:26:02.776Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:29:46.189Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:29:46.205Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:32:23.037Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:32:23.051Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:32:37.471Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:32:37.487Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:32:40.477Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:32:40.493Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:33:09.832Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:33:09.849Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:33:11.064Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:33:11.099Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:33:24.006Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:33:24.020Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:36:08.891Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:36:08.904Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:36:11.259Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:36:11.273Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:36:13.087Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:36:13.100Z"}
+{"level":"error","message":"Error registering user: User validation failed: purpose: `Full_time_work` is not a valid enum value for path `purpose`.","service":"order-management-backend","timestamp":"2025-06-18T13:38:55.479Z"}
+{"level":"error","message":"Error registering user: User validation failed: purpose: `Full_time_work` is not a valid enum value for path `purpose`.","service":"order-management-backend","timestamp":"2025-06-18T13:41:17.607Z"}
+{"level":"error","message":"Error registering user: User validation failed: purpose: `Full_time_work` is not a valid enum value for path `purpose`.","service":"order-management-backend","timestamp":"2025-06-18T13:42:31.576Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:43:04.045Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:43:04.061Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:43:06.792Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:43:06.810Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T13:43:12.774Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T13:43:12.796Z"}
+{"level":"info","message":"User registered: agsabhishek1905@gmail.com","service":"order-management-backend","timestamp":"2025-06-18T13:43:26.573Z"}
+{"level":"error","message":"Error registering user: User validation failed: purpose: `only_to_purchase_products` is not a valid enum value for path `purpose`.","service":"order-management-backend","timestamp":"2025-06-18T14:02:42.867Z"}
+{"level":"info","message":"User registered: gmgrconsumers@gmail.com","service":"order-management-backend","timestamp":"2025-06-18T14:02:49.038Z"}
+{"level":"info","message":"Order created: ORD-1750260583850-i1jfr8fyp","service":"order-management-backend","timestamp":"2025-06-18T15:29:43.879Z"}
+{"level":"error","message":"Error creating order: Order validation failed: paymentStatus: `pending` is not a valid enum value for path `paymentStatus`.","service":"order-management-backend","timestamp":"2025-06-18T18:38:33.523Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-18T18:39:33.714Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-18T18:39:33.790Z"}
+{"level":"error","message":"Error creating order: Order validation failed: paymentStatus: `pending` is not a valid enum value for path `paymentStatus`.","service":"order-management-backend","timestamp":"2025-06-18T18:40:08.180Z"}
+{"level":"error","message":"Error creating order: Order validation failed: paymentStatus: `pending` is not a valid enum value for path `paymentStatus`.","service":"order-management-backend","timestamp":"2025-06-18T18:54:37.393Z"}
+{"level":"info","message":"Order created: ORD-1750273051467-0iwvfufr8","service":"order-management-backend","timestamp":"2025-06-18T18:57:31.500Z"}
+{"level":"info","message":"Order created: ORD-1750273076147-wzm9s80lq","service":"order-management-backend","timestamp":"2025-06-18T18:57:56.154Z"}
+{"level":"info","message":"Order created: ORD-1750273908862-3g00udkyf","service":"order-management-backend","timestamp":"2025-06-18T19:11:48.883Z"}
+{"level":"info","message":"Order created: ORD-1750316565838-wn7rv886r","service":"order-management-backend","timestamp":"2025-06-19T07:02:45.887Z"}
+{"level":"info","message":"Order created: ORD-1750320677512-cup8vl4ed","service":"order-management-backend","timestamp":"2025-06-19T08:11:17.541Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T09:29:12.819Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T09:29:12.841Z"}
+{"level":"info","message":"Order created: ORD-1750499215183-amlcpalhg","service":"order-management-backend","timestamp":"2025-06-21T09:46:55.267Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T09:51:06.782Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T09:51:06.797Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T09:57:39.863Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T09:57:39.879Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:07:18.580Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:07:18.596Z"}
+{"level":"info","message":"Order created: ORD-1750500560122-2ga9i16sz","service":"order-management-backend","timestamp":"2025-06-21T10:09:20.149Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:13:00.433Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:13:00.449Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:13:14.698Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:13:14.714Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:16:43.584Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:16:43.612Z"}
+{"level":"info","message":"Order created: ORD-1750502145975-dxa99j86g","service":"order-management-backend","timestamp":"2025-06-21T10:35:46.004Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:42:49.053Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:42:49.070Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:42:55.046Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:42:55.061Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:43:01.223Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:43:01.236Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:43:11.844Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:43:11.857Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:43:13.231Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:43:13.245Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:45:13.722Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:45:13.739Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:54:13.193Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:54:13.206Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T10:54:21.957Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T10:54:21.969Z"}
+{"level":"info","message":"Order created: ORD-1750504185417-hlgegjb0z","service":"order-management-backend","timestamp":"2025-06-21T11:09:45.445Z"}
+{"level":"info","message":"Order created: ORD-1750505223692-3fvrgbnxj","service":"order-management-backend","timestamp":"2025-06-21T11:27:03.701Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-21T11:31:53.271Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-21T11:31:53.286Z"}
+{"level":"info","message":"Order created: ORD-1750505519377-h1vkvol9d","service":"order-management-backend","timestamp":"2025-06-21T11:31:59.386Z"}
+{"level":"info","message":"Order created: ORD-1750506258843-bg52brm1d","service":"order-management-backend","timestamp":"2025-06-21T11:44:18.850Z"}
+{"level":"info","message":"Order created: ORD-1750506361390-37pvsrd48","service":"order-management-backend","timestamp":"2025-06-21T11:46:01.395Z"}
+{"level":"info","message":"Order created: ORD-1750508788792-crmo2riq5","service":"order-management-backend","timestamp":"2025-06-21T12:26:28.809Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-22T14:06:10.213Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-22T14:06:10.280Z"}
+{"level":"info","message":"Order created: ORD-1750603846293-yxsulb666","service":"order-management-backend","timestamp":"2025-06-22T14:50:46.331Z"}
+{"level":"info","message":"Order created: ORD-1750604140268-1idy3ae0i","service":"order-management-backend","timestamp":"2025-06-22T14:55:40.275Z"}
+{"level":"info","message":"Order created: ORD-1750604480753-3cfxu095t","service":"order-management-backend","timestamp":"2025-06-22T15:01:20.761Z"}
+{"level":"info","message":"Order created: ORD-1750604591901-458xrdl7u","service":"order-management-backend","timestamp":"2025-06-22T15:03:11.906Z"}
+{"level":"info","message":"Order created: ORD-1750604852294-zo5go9o7h","service":"order-management-backend","timestamp":"2025-06-22T15:07:32.302Z"}
+{"level":"info","message":"Order created: ORD-1750606019832-dl2ssrmjl","service":"order-management-backend","timestamp":"2025-06-22T15:26:59.841Z"}
+{"level":"info","message":"User registered: agsabhishek1905@gmail.com","service":"order-management-backend","timestamp":"2025-06-22T15:29:03.677Z"}
+{"level":"info","message":"Notification user registered: 9566372450","service":"order-management-backend","timestamp":"2025-06-22T17:27:51.546Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T11:07:42.534Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T11:07:42.579Z"}
+{"level":"error","message":"Error creating order: Order validation failed: paymentMethod: `online` is not a valid enum value for path `paymentMethod`.","service":"order-management-backend","timestamp":"2025-06-25T11:56:51.054Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T11:58:11.742Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T11:58:11.759Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T11:58:13.297Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T11:58:13.310Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T11:58:15.235Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T11:58:15.247Z"}
+{"level":"info","message":"Order created: ORD-1750852715262-8b5xejai0","service":"order-management-backend","timestamp":"2025-06-25T11:58:35.367Z"}
+{"level":"info","message":"Order created: ORD-1750856528395-7rjxmgo0d","service":"order-management-backend","timestamp":"2025-06-25T13:02:08.416Z"}
+{"level":"info","message":"Order created: ORD-1750857223577-1hmyt4z1v","service":"order-management-backend","timestamp":"2025-06-25T13:13:43.586Z"}
+{"level":"info","message":"Order created: ORD-1750857330764-j3i7hq3ym","service":"order-management-backend","timestamp":"2025-06-25T13:15:30.775Z"}
+{"level":"info","message":"Order created: ORD-1750857421195-wko9ewzqi","service":"order-management-backend","timestamp":"2025-06-25T13:17:01.199Z"}
+{"level":"info","message":"Notification user registered: 9566372450","service":"order-management-backend","timestamp":"2025-06-25T13:24:48.377Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:35:39.118Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:35:39.139Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:36:12.783Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:36:12.801Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:40:33.788Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:40:33.802Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:40:49.872Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:40:49.889Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:40:52.909Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:40:52.922Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:40:53.889Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:40:53.906Z"}
+{"level":"info","message":"User registered: agsabhishek1905@gmail.com","service":"order-management-backend","timestamp":"2025-06-25T13:43:40.306Z"}
+{"level":"error","message":"Error registering user: token is not defined","service":"order-management-backend","timestamp":"2025-06-25T13:43:40.307Z"}
+{"level":"info","message":"Server is running on port 5000","service":"order-management-backend","timestamp":"2025-06-25T13:44:19.195Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:44:19.212Z"}
+{"level":"info","message":"User registered: agsabhishek1905@gmail.com","service":"order-management-backend","timestamp":"2025-06-25T13:44:55.750Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T13:56:44.039Z"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"order-management-backend","timestamp":"2025-06-25T13:56:44.054Z"}
+{"level":"info","message":"Notification user registered: 9566372450","service":"order-management-backend","timestamp":"2025-06-25T14:10:51.121Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:16:15.492Z"}
+{"level":"warn","message":"MongoDB disconnected","service":"order-management-backend","timestamp":"2025-06-25T14:16:15.515Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:19:19.090Z"}
+{"level":"warn","message":"MongoDB disconnected","service":"order-management-backend","timestamp":"2025-06-25T14:19:19.110Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:32:29.751Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:32:42.552Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:32:43.803Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:36:15.852Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:36:18.323Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:36:23.498Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:36:26.476Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:36:29.185Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:36:55.333Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:37:47.224Z"}
+{"level":"info","message":"Notification user registered: 9566372450","service":"order-management-backend","timestamp":"2025-06-25T14:38:16.496Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:39:43.914Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:39:50.621Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:40:40.660Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:40:52.589Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:42:15.819Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:43:17.606Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:43:19.779Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:43:21.495Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:44:24.166Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:44:50.232Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:49:58.460Z"}
+{"level":"error","message":"Error registering user: User validation failed: purpose: `company_benefits` is not a valid enum value for path `purpose`.","service":"order-management-backend","timestamp":"2025-06-25T14:51:28.296Z"}
+{"level":"info","message":"User registered: agsabhishek1905@gmail.com","service":"order-management-backend","timestamp":"2025-06-25T14:51:56.233Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:53:39.547Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:53:47.307Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:53:57.949Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:53:59.038Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:54:42.622Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:54:59.764Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:55:58.488Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:56:13.840Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:56:24.497Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:56:27.585Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:56:35.355Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:59:08.856Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T14:59:10.058Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T15:50:51.759Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T15:51:03.518Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T15:51:52.119Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T16:16:16.257Z"}
+{"level":"info","message":"Server is running on port 3001","service":"order-management-backend","timestamp":"2025-06-25T16:18:09.996Z"}
